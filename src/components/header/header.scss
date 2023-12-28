@@ -1,0 +1,16 @@
+@import '../../styles/fonts';
+
+.header {
+    padding: 0 20px;
+    width: 100%;
+    text-align: center;
+    font-family: $italianaFont;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    > p {
+        letter-spacing: 1px;
+    }
+}

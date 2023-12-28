@@ -1,0 +1,19 @@
+.login {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .login_form {
+        margin-bottom: 40px;
+    }
+
+    .login_subtitle {
+        font-family: Helvetica, sans-serif;
+        font-weight: 100;
+        font-size: 14px;
+        margin: 16px 0 61px;
+    }
+}

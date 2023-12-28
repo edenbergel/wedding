@@ -1,0 +1,25 @@
+@import '../../styles/fonts';
+
+.landing {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr 1fr .5fr;
+    height: 100%;
+    justify-items: center;
+    left: 0;
+    overflow: auto hidden;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    align-items: center;
+    font-family: $italianaFont;
+
+    .landing_title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: 400;
+    }
+}

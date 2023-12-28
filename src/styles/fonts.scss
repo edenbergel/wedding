@@ -1,0 +1,31 @@
+@import './variables.scss';
+
+@font-face {
+    font-family: 'Italiana';
+    src: local('Italiana-Regular'), local('Italiana-Regular'),
+        url('../fonts/Italiana-Regular.woff2') format('woff2'),
+        url('../fonts/Italiana-Regular.woff') format('woff'),
+        url('../fonts/Italiana-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter-Regular'), local('Inter-Regular'),
+        url('../fonts/Inter-Regular.woff2') format('woff2'),
+        url('../fonts/Inter-Regular.woff') format('woff'),
+        url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GAELA';
+    src: local('GAELA'), local('GAELA'),
+        url('../fonts/GAELA.woff2') format('woff2'),
+        url('../fonts/GAELA.woff') format('woff'),
+        url('../fonts/GAELA.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

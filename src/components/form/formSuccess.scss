@@ -1,0 +1,13 @@
+.form_success {
+    height: calc(100vh - 60px);
+    display: grid;
+    text-align: center;
+
+    > *:first-child, > *:last-child  {
+        align-self: flex-end;
+    }
+
+    > *:last-child {
+        padding-bottom: 24px;
+    }
+}

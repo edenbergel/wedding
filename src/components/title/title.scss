@@ -1,0 +1,15 @@
+@import '../../styles/fonts';
+
+.title {
+    .title_wrapper {
+        font-family: $italianaFont;
+        justify-content: center;
+        text-align: center;
+
+        .title_item {
+            font-weight: 400;
+            font-size: 25px;
+            letter-spacing: 1.04px;
+        }
+    }
+}

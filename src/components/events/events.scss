@@ -1,0 +1,42 @@
+@import '../../styles/fonts';
+
+.events {
+
+    .event_wrapper {
+        text-align: center;
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .event_img {
+            padding: 0 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 50vh;
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .event_date {
+            letter-spacing: 5px;
+            font-size: 12px;
+            font-family: Helvetica, sans-serif;
+            padding: 16px 0 10px;
+            color: #8F8E8E;
+        }
+
+        .event_name {
+            font-family: $italianaFont;
+            font-size: 24px;
+            padding-bottom: 16px;
+        }
+
+        .event_date,
+        .event_name {
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+    }
+}

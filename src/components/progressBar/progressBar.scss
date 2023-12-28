@@ -1,0 +1,33 @@
+@import '../../styles/fonts';
+
+.progress_bar_container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+
+    .progress_bar {
+        height: 100px;
+        width: 1.5px;
+        margin: 5px auto;
+        background-color: #D3D3D3;
+        position: relative;
+
+        .progress_bar_after {
+            width: 1.5px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: height .8s ease-out;
+        }
+    }
+
+    > p {
+        font-size: 14px;
+        font-family: $gaelaFont;
+        letter-spacing: 1.04px;
+    }
+}
