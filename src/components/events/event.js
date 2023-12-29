@@ -7,18 +7,8 @@ import './events.scss';
 
 const Event = ({ event, index, next, current }) => {
     const navigate = useNavigate();
-    // const [current, setCurrent] = useState(0);
-    // const goTo = (index = 0) => {
-    //     const total = 3;
-    //     index = ((index % total) + total) % total;
-    //     setCurrent(index);
-    // }
-
-	// const next = () => {
-	// 	goTo(current + 1);
-	// };
     const isLast = current === 2;
-    console.log({isLast})
+
     return (
         <Slide isVisible={index === current}>
             <div className={'event_wrapper'}>
@@ -28,7 +18,7 @@ const Event = ({ event, index, next, current }) => {
                 <h2 className='event_name'>{event.name}</h2>
                 <Button 
                     text={isLast ? 'Invitation' : 'next'} 
-                    onClick={() => isLast ? navigate('/form') : next()}
+                    onClick={() => isLast ? navigate('/invitation') : next()}
                 />
             </div>
         </Slide>
