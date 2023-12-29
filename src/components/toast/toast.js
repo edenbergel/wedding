@@ -5,11 +5,11 @@ export const Toast = ({ error, setError }) => {
     const [showToast, setShowToast] = useState(false);
 
     useEffect(() => {
-        setShowToast(error)
+        setShowToast(error);
 
         const toast = setTimeout(() => {
-            setShowToast(false)
-            setError('')
+            setShowToast(false);
+            setError('');
         }, 3000)
 
         return () => clearTimeout(toast);
@@ -18,6 +18,7 @@ export const Toast = ({ error, setError }) => {
     return (
         <div className={`error ${showToast && 'isActive'}`}>
             <p className="error_msg">{error}</p>
+            <div className='error_cross' onClick={() => setShowToast(false)}/>
         </div>
     );
 };
