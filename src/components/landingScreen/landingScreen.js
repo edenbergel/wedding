@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Logo } from "../../svgs";
 import { FadeIn } from "../animations/fadeIn";
 import { Button } from "../button/button";
-import { Logo } from "../logo/logo";
 import "./landingScreen.scss";
 
 export const LandingScreen = () => {

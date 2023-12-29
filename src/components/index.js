@@ -3,7 +3,6 @@ export { Title } from "./title/title";
 export { Events } from "./events/events";
 export { Button } from "./button/button";
 export { LandingScreen } from "./landingScreen/landingScreen";
-export { Logo } from "./logo/logo";
 export { PageTransition } from "./animations/pageTransition";
 export { Home } from "./home/home";
 export { Form } from "./form/form";
