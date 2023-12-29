@@ -8,7 +8,7 @@ import "./invitation.scss";
 
 export const Invitation = () => {
     const navigate = useNavigate();
-    
+
     return (
         <>
         <Header />
@@ -181,7 +181,7 @@ export const Invitation = () => {
                 <h4 className='invitation_subtitle'>Destination of love</h4>
                 <h6 className='invitation_address'>HaGiva, Givat Brenner, Israël</h6>
                 <p className='invitation_note'>Please confirm your presence</p>
-                <Button text={'RSVP'} onClick={() => navigate('/form')} />
+                <Button text={'RSVP'} onClick={() => navigate('/rsvp')} />
             </div>
         </FadeIn>
         </>

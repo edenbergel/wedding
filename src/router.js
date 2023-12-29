@@ -9,7 +9,7 @@ const Routing = () => {
                 <Route exact path="/" element={<Login />} />
                 <Route exact path="/home" element={<Home />} />
                 <Route path="/invitation" element={<Invitation />} />
-                <Route path="/form" element={<Form />} />
+                <Route path="/rsvp" element={<Form />} />
                 <Route path="/form-success" element={<FormSuccess />} />
             </Routes>
         </Router>

@@ -1,0 +1,42 @@
+@import '../../styles/variables.scss';
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F9F8F4;
+    z-index: 10;
+
+    .menu_upper_content {
+        display: flex;
+        justify-content: space-between;
+        padding: 16.5px 25px 16.5px;
+    }
+
+    .menu_nav {
+        height: calc(100vh - 60px);
+
+        .menu_nav_content {
+            display: flex;
+            gap: 60px;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .menu_nav_item {
+            text-transform: capitalize;
+            font-size: 40px;
+            font-family: $italianaFont;
+            margin: 0 53px 0 28px;
+    
+            > a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+}
