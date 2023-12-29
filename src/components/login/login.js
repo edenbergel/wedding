@@ -7,11 +7,10 @@ import './login.scss';
 import { useNavigate } from "react-router-dom";
 import { Toast } from '../toast/toast';
 
-export const Login = ({ router }) => {
+export const Login = () => {
     const [enteredPassword, setEnteredPassword] = useState('');
-    const [isValidPassword, setIsValidPassword] = useState(null);
     const [error, setError] = useState('');
-    
+
     const navigate = useNavigate();
 
     const checkPasswordValidity = async () => {
@@ -21,13 +20,11 @@ export const Login = ({ router }) => {
 
             if (passwords === enteredPassword) {
                 // Password is valid
-                setIsValidPassword(true);
                 setError('')
                 navigate('/home');
             } else {
                 // Password is not found in the collection
-                setIsValidPassword(false);
-                setError('')
+                setError('Password is not valid')
             }
         } catch (error) {
             console.error('Error checking password:', error);
@@ -48,7 +45,7 @@ export const Login = ({ router }) => {
             </form>
             <Button text={'enter'} onClick={checkPasswordValidity} />
             {error && (
-                <Toast error={'Password is not valid'} />
+                <Toast error={error} setError={setError}/>
             )}
         </div>
     );

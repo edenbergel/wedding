@@ -35,13 +35,11 @@ export const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(quantity.toString().trim())
+
         if (!firstName || !lastName || !quantity.toString().trim()) {
             setError('Please fill in all required fields');
             return;
         }
-
-        setError('');
 
         apiService.post({
             firstName,
@@ -120,7 +118,7 @@ export const Form = () => {
                         />
                     </div>
                     <Button type="submit" text={'send'} />
-                    {error && <Toast error={error} />}
+                    {error && <Toast error={error} setError={setError} />}
                 </form>
             </main>
         </FadeIn>

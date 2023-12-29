@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './toast.scss';
 
-export const Toast = ({ error }) => {
+export const Toast = ({ error, setError }) => {
     const [showToast, setShowToast] = useState(false);
 
     useEffect(() => {
@@ -9,10 +9,11 @@ export const Toast = ({ error }) => {
 
         const toast = setTimeout(() => {
             setShowToast(false)
+            setError('')
         }, 3000)
 
         return () => clearTimeout(toast);
-    }, [error])
+    }, [error, setError])
 
     return (
         <div className={`error ${showToast && 'isActive'}`}>
