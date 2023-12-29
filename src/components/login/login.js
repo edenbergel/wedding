@@ -21,7 +21,7 @@ export const Login = () => {
             if (passwords === enteredPassword) {
                 // Password is valid
                 setError('')
-                navigate('/home');
+                navigate('/landing');
             } else {
                 // Password is not found in the collection
                 setError('Password is not valid')

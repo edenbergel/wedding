@@ -13,11 +13,11 @@ export const Header = () =>  {
         <>
             <FadeIn>
                 <header className="header">
-                    <Link to='/home'><Logo /></Link>
+                    <Link to='/events'><Logo /></Link>
                     <Button text={'menu'} noMargin onClick={() => setShowMenu(!showMenu)}></Button>
                 </header>
             </FadeIn>
-            {showMenu && <Menu />}
+            {showMenu && <Menu setShowMenu={setShowMenu} />}
         </>
     )
 }

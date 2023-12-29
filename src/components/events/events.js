@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import eventsData from "../../events";
 import { FadeIn } from "../animations/fadeIn";
-import { PageTransition } from "../animations/pageTransition";
+import { Header } from "../header/header";
 import { ProgressBar } from "../progressBar/progressBar";
 import Event from "./event";
 import "./events.scss";
@@ -19,21 +19,20 @@ export const Events = () => {
 	};
 
     return (
-        // <PageTransition>
-            <FadeIn delay={400}>
-                <section className="events">
-                    <ProgressBar current={current} />
-                    {eventsData.map((event, index) => (
-                        <Event 
-                            key={event.name} 
-                            event={event} 
-                            index={index} 
-                            next={next} 
-                            current={current}
-                        />
-                    ))}
-                </section>
-            </FadeIn>
-        // </PageTransition>
+        <FadeIn delay={400}>
+            <Header />
+            <section className="events">
+                <ProgressBar current={current} />
+                {eventsData.map((event, index) => (
+                    <Event 
+                        key={event.name} 
+                        event={event} 
+                        index={index} 
+                        next={next} 
+                        current={current}
+                    />
+                ))}
+            </section>
+        </FadeIn>
     );
 };
