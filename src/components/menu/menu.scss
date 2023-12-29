@@ -34,6 +34,24 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            color: #D4D3CF;
+            
+            &.is_active {
+                color: #000;
+            }
+        }
+    }
+
+    .spin {
+        position: absolute;
+        bottom: 20px;
+        right: 28px;
+        animation: spin 6s infinite linear;  
+    }
+
+    @keyframes spin {
+        to {
+            rotate: -360deg;
         }
     }
 }
