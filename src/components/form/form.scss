@@ -1,13 +1,17 @@
-@import '../../styles/fonts';
+@import '../../styles/variables';
 
 .form_container {
-    height: calc(100vh - 60px);
+    height: $contentHeight;
     font-family: $italianaFont;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 90%;
     margin: 0 auto;
+
+    @media (min-width: $mediumTablet) {
+        height: $contentHeightMedium;
+    }
 
     form {
         display: grid;

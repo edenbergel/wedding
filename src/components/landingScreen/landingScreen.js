@@ -11,7 +11,7 @@ export const LandingScreen = () => {
     return (
         <FadeIn>
             <div className="landing">
-                <Logo />
+                <Logo className={'logo'} />
                 <h1 className="landing_title">
                     For our <br /> favourite people
                 </h1>

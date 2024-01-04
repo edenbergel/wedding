@@ -1,8 +1,12 @@
 @import '../../styles/variables';
 
 .events {
-    height: calc(100vh - 60px);
+    height: $contentHeight;
     overflow: hidden;    
+
+    @media (min-width: $mediumTablet) {
+        height: $contentHeightMedium;
+    }
 
     .event_wrapper {
         text-align: center;

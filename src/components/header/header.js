@@ -13,7 +13,7 @@ export const Header = () =>  {
         <>
             <FadeIn>
                 <header className="header">
-                    <Link to='/events'><Logo /></Link>
+                    <Link to='/events'><Logo className={'header_logo'}/></Link>
                     <Button text={'menu'} noMargin onClick={() => setShowMenu(!showMenu)} />
                 </header>
             </FadeIn>

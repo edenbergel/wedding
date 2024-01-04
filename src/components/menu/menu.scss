@@ -12,6 +12,7 @@
     .menu_upper_content {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 16.5px 25px 16.5px;
 
         @media (min-width: $mediumTablet) {
@@ -21,11 +22,19 @@
                 width: 45px;
                 height: 64px;
             }
+            
+            .menu_back {
+                cursor: pointer;
+            }
         }
     }
 
     .menu_nav {
-        height: calc(100vh - 60px);
+        height: $contentHeight;
+
+        @media (min-width: $mediumTablet) {
+            height: $contentHeightMedium;
+        }
 
         .menu_nav_content {
             display: flex;

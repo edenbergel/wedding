@@ -1,7 +1,13 @@
+@import '../../styles/variables.scss';
+
 .form_success {
-    height: calc(100vh - 60px);
+    height: $contentHeight;
     display: grid;
     text-align: center;
+
+    @media (min-width: $mediumTablet) {
+        height: $contentHeightMedium;
+    }
 
     > *:first-child, > *:last-child  {
         align-self: flex-end;

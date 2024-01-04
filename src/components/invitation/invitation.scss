@@ -2,7 +2,6 @@
 
 .invitation {
     @media (min-width: $mediumTablet) {
-        height: calc(100vh - 60px);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -13,7 +12,6 @@
     .invitation_wrapper {
         font-family: $italianaFont;
         text-align: center;
-        margin: 20px auto;
         padding: 30px 12.5px;
         border: 1px solid #000; 
         outline: .5px solid #000;
@@ -23,6 +21,10 @@
         justify-content: center;
         align-items: center;
         width: calc(100vw - 10%);
+
+        @media (max-width: #{$mediumTablet - 1px}) {
+            margin: 20px auto;
+        }
 
         @media (min-width: $mediumTablet) {
             padding: 53px 12.5px;

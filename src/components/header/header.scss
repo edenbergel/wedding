@@ -1,4 +1,4 @@
-@import '../../styles/fonts';
+@import '../../styles/variables';
 
 .header {
     width: 100%;
@@ -13,5 +13,14 @@
 
     > p {
         letter-spacing: 1px;
+    }
+
+    @media (min-width: $mediumTablet) {
+        height: 124px;
+
+        .header_logo {
+            width: 45px;
+            height: 64px;
+        }
     }
 }

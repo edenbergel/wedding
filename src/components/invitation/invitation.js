@@ -4,7 +4,6 @@ import { FadeIn } from "../animations/fadeIn";
 import { Button } from "../button/button";
 import { Header } from "../header/header";
 import { Title } from "../title/title";
-import { CurvedTitle } from "../../svgs";
 import "./invitation.scss";
 
 export const Invitation = () => {
