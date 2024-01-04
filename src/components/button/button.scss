@@ -16,6 +16,10 @@
         z-index: 2;
         position: relative;
         letter-spacing: 1.5px;
+
+        @media (min-width: $mediumTablet) {
+            font-size: 18px;
+        }
     }
 
     &:after{
