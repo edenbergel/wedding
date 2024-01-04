@@ -16,31 +16,42 @@ export const Events = () => {
         const total = 3;
         index = ((index % total) + total) % total;
         setCurrent(index);
-    }
+    };
 
-	const next = () => {
-		goTo(current + 1);
-	};
+    const next = () => {
+        goTo(current + 1);
+    };
 
     return (
         <FadeIn delay={400}>
             <Header />
             <section className="events">
                 <ProgressBar current={current} />
-                <Title title={<>{'JEREMIE'} <br/> {'& HODAYA'}</>} className={'event_title'}/>
+                <Title
+                    title={
+                        <>
+                            {"JEREMIE"}{" "}
+                            <span className="break_line">
+                                <span>{"&"}{" "}</span>
+                                <span>{"HODAYA"}</span>
+                            </span>
+                        </>
+                    }
+                    className={"event_title"}
+                />
                 {eventsData.map((event, index) => (
-                    <Event 
-                        key={event.name} 
-                        event={event} 
-                        index={index} 
-                        next={next} 
+                    <Event
+                        key={event.name}
+                        event={event}
+                        index={index}
+                        next={next}
                         current={current}
                     />
                 ))}
                 <Button
-                    className={'event_btn_desktop'}
-                    text={'Invitation'} 
-                    onClick={() => navigate('/invitation')}
+                    className={"event_btn_desktop"}
+                    text={"Invitation"}
+                    onClick={() => navigate("/invitation")}
                 />
             </section>
         </FadeIn>

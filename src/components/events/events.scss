@@ -55,14 +55,26 @@
         }
     }
 
+    .break_line {
+        display: block;
+    }
+
     @media (min-width: $mediumTablet) {
         display: grid;
-        grid-template-columns: 0fr repeat(4, 1fr);
+        grid-template-columns: 0fr 1fr repeat(3, .7fr);
         grid-template-rows: repeat(2, 1fr);
         align-items: center;
+        max-width: 90%;
+        margin: auto;
+
+        .break_line {
+            display: grid;
+            text-align: left;
+        }
 
         .event_title {
             grid-area: 1 / 2 / 2 / 3;
+            justify-self: baseline;
 
             .title_item {
                 font-size: 40px;
