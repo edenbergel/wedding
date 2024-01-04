@@ -13,7 +13,9 @@ export const Login = () => {
 
     const navigate = useNavigate();
 
-    const checkPasswordValidity = async () => {
+    const checkPasswordValidity = async (e) => {
+        e.preventDefault();
+        
         try {
             const response = await apiService.get();
             const passwords = response.data.data.attributes.password;
@@ -42,6 +44,7 @@ export const Login = () => {
                     onChange={(e) => setEnteredPassword(e.target.value)}
                     hasError={!!error}
                     className={'login_input'}
+                    onKeyPress={e => e.key === 'Enter' ? checkPasswordValidity(e) : {}}
                 />
             </form>
             <Button text={'enter'} onClick={checkPasswordValidity} />

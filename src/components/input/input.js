@@ -8,7 +8,8 @@ export const Input = ({
     type = "text",
     style,
     hasError,
-    className
+    className,
+    onKeyPress
 }) => {
         return (
             <input
@@ -18,6 +19,7 @@ export const Input = ({
                 onChange={onChange}
                 className={`form_input ${className} ${hasError && "hasError"}`}
                 style={style}
+                onKeyPress={onKeyPress}
             />
         );
 };
