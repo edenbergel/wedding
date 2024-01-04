@@ -14,7 +14,7 @@ export const Header = () =>  {
             <FadeIn>
                 <header className="header">
                     <Link to='/events'><Logo /></Link>
-                    <Button text={'menu'} noMargin onClick={() => setShowMenu(!showMenu)}></Button>
+                    <Button text={'menu'} noMargin onClick={() => setShowMenu(!showMenu)} />
                 </header>
             </FadeIn>
             {showMenu && <Menu setShowMenu={setShowMenu} />}

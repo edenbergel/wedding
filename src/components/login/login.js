@@ -41,6 +41,7 @@ export const Login = () => {
                     value={enteredPassword} 
                     onChange={(e) => setEnteredPassword(e.target.value)}
                     hasError={!!error}
+                    className={'login_input'}
                 />
             </form>
             <Button text={'enter'} onClick={checkPasswordValidity} />

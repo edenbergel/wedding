@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Logo = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="21" height="28" viewBox="0 0 21 28" fill="none">
+export const Logo = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="21" height="28" viewBox="0 0 21 28" fill="none" className={`${className}`}>
         <path d="M0.166992 0.0507812H20.167V27.9488H0.166992V0.0507812Z" fill="url(#pattern0)"/>
         <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">

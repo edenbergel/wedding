@@ -1,14 +1,43 @@
-@import '../../styles/fonts';
+@import '../../styles/variables';
 
 .invitation {
-    font-family: $italianaFont;
-    text-align: center;
-    margin: 20px;
-    padding: 30px 12.5px;
-    border: 1px solid #000; 
-    outline: .5px solid #000;
-    outline-offset: -10px;
-    
+    @media (min-width: $mediumTablet) {
+        height: calc(100vh - 60px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .invitation_wrapper {
+        font-family: $italianaFont;
+        text-align: center;
+        margin: 20px auto;
+        padding: 30px 12.5px;
+        border: 1px solid #000; 
+        outline: .5px solid #000;
+        outline-offset: -10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(100vw - 10%);
+
+        @media (min-width: $mediumTablet) {
+            padding: 53px 12.5px;
+        }
+    } 
+
+    .invitation_title {
+        font-size: 12px;
+        margin-bottom: 20px;
+        @media (min-width: $mediumTablet) {
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+
     .invitation_content {
         display: grid;
         row-gap: 12px;

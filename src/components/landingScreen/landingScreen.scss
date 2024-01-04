@@ -16,10 +16,20 @@
     align-items: center;
     font-family: $italianaFont;
 
+    @media (min-width: $mediumTablet) {
+        br {
+            display: none;
+        }
+    }
+
     .landing_title {
         font-size: 30px;
         letter-spacing: 1px;
         text-align: center;
         font-weight: 400;
+
+        @media (min-width: $mediumTablet) {
+            font-size: 40px;
+        }
     }
 }

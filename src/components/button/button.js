@@ -1,10 +1,10 @@
 import React from "react";
 import "./button.scss";
 
-export const Button = ({ text, size, onClick, type, noMargin = false }) => {
+export const Button = ({ text, size, onClick, type, noMargin = false, className }) => {
     return (
         <button
-            className="button"
+            className={`button  ${className}`}
             onClick={onClick}
             type={type}
             style={!noMargin ? { margin: "0 auto" } : null}

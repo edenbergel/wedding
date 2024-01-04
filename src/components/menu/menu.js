@@ -18,9 +18,9 @@ const Menu = ({ setShowMenu }) => {
     return (
         <div className='menu'>
             <div className='menu_upper_content'>
-                <Logo />
+                <Logo className={'menu_logo'} />
                 <div onClick={() => hideMenu()}>
-                    <Back />
+                    <Back className={'menu_back'} />
                 </div>
             </div>
 
@@ -30,7 +30,10 @@ const Menu = ({ setShowMenu }) => {
                         navItems.map((item, i) => (
                             <li key={i} className={`menu_nav_item ${location.pathname === `/${item}` && 'is_active'}`}  onClick={() => hideMenu(item)}>
                                 <p>{item}</p>
-                                <Link fill={`${location.pathname === `/${item}` ? 'black' :  '#D4D3CF'}`} />
+                                <Link 
+                                    fill={`${location.pathname === `/${item}` ? 'black' :  '#D4D3CF'}`} 
+                                    className={'menu_item_icon'}
+                                />
                             </li>
                         ))
                     }

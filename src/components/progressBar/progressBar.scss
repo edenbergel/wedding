@@ -1,4 +1,4 @@
-@import '../../styles/fonts';
+@import '../../styles/variables';
 
 .progress_bar_container {
     position: absolute;
@@ -6,6 +6,11 @@
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
+
+    @media (min-width: $mediumTablet) {
+        display: none;
+        grid-area: 1 / 1 / 2 / 2;
+    }
 
     .progress_bar {
         height: 100px;

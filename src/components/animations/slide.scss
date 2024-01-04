@@ -1,7 +1,11 @@
+@import '../../styles/variables';
+
 .slide-transition {
-    opacity: 0;
-    height: 0;
-    transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    @media (max-width: #{$mediumTablet - 1px}) {
+        opacity: 0;
+        height: 0;
+        transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
 }
 
 .slide-transition.transitioning {

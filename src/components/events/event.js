@@ -2,21 +2,20 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Slide } from '../animations/slide';
 import { Button } from '../button/button';
-import { Title } from '../title/title';
 import './events.scss';
 
 const Event = ({ event, index, next, current }) => {
     const navigate = useNavigate();
-    const isLast = current === 2;
+    const isLast = index === 2;
 
     return (
-        <Slide isVisible={index === current}>
+        <Slide isVisible={index === current} className={`event_${index}`}>
             <div className={'event_wrapper'}>
-                <Title title={<>{'JEREMIE'} <br/> {'& HODAYA'}</>} />
                 <div className='event_img' style={{ backgroundImage: `url(${event.src})` }} />
                 <p className='event_date'>{event.date}</p>
                 <h2 className='event_name'>{event.name}</h2>
-                <Button 
+                <Button
+                    className={'event_btn'}
                     text={isLast ? 'Invitation' : 'next'} 
                     onClick={() => isLast ? navigate('/invitation') : next()}
                 />

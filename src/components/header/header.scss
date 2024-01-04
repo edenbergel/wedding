@@ -1,7 +1,6 @@
 @import '../../styles/fonts';
 
 .header {
-    padding: 0 20px;
     width: 100%;
     text-align: center;
     font-family: $italianaFont;
@@ -9,6 +8,8 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    max-width: 90%;
+    margin: 0 auto;
 
     > p {
         letter-spacing: 1px;

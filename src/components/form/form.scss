@@ -6,6 +6,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
 
     form {
         display: grid;
@@ -17,6 +19,10 @@
         outline-offset: -10px;
         position: relative;
         width: calc(100vw - 10%);
+
+        @media (min-width: $mediumTablet) {
+            padding: 53px 15px;
+        }
 
         .form_title {
             position: absolute;
@@ -59,6 +65,10 @@
             font-size: 16px;
             text-align: center;
             letter-spacing: 1px;
+
+            @media (min-width: $mediumTablet) {
+                font-size: 18px;
+            }
         }
 
         .form_wrapper_number {
