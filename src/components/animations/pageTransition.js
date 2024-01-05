@@ -1,32 +1,7 @@
-import React, { useRef, useEffect } from "react";
-import anime from "animejs";
+import React, { useRef } from "react";
 
 export const PageTransition = ({children}) => {
   const svgRef = useRef(null);
-
-  useEffect(() => {
-    // Trigger the SVG animation when the component mounts
-    anime({
-        targets: svgRef.current,
-        scaleY: [1, 0], // Decrease height from 100% to 0
-        transformOrigin: ['50% 0%', '50% 0%'],
-        easing: "easeInOutQuad",
-        duration: 1500,
-        complete: () => {
-            // Animation completed, add another animation for the curve
-                anime({
-                    targets: '.morph',
-                    d: 'M0,100 Q50,0 100,100 Z', // Transition to the curved path
-                    easing: 'easeInOutQuad',
-                    duration: 1000,
-                    complete: () => {
-                        // Curve animation completed
-                        console.log('Curve animation completed');
-                    },
-                });
-            },
-        });
-  }, []); // Empty dependency array ensures the effect runs only once on mount
 
   return (
     <>

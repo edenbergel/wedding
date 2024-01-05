@@ -15,6 +15,10 @@
         letter-spacing: 1px;
     }
 
+    > a {
+        height: 28px;
+    }
+
     @media (min-width: $mediumTablet) {
         height: 124px;
 

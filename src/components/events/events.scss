@@ -3,9 +3,14 @@
 .events {
     height: $contentHeight;
     overflow: hidden;    
+    display: grid;
 
     @media (min-width: $mediumTablet) {
         height: $contentHeightMedium;
+    }
+
+    .event_title {
+        align-self: end;
     }
 
     .event_wrapper {
@@ -74,7 +79,11 @@
 
         .event_title {
             grid-area: 1 / 2 / 2 / 3;
-            justify-self: baseline;
+
+            @media (min-width: $mediumTablet) {
+                justify-self: baseline;
+                align-self: auto;
+            }
 
             .title_item {
                 font-size: 40px;

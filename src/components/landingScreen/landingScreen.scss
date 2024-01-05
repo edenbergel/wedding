@@ -33,8 +33,10 @@
         }
     }
 
-    .logo {
-        width: 45px;
-        height: 64px;
+    @media (min-width: $mediumTablet) {
+        .logo {
+            width: 45px;
+            height: 64px;
+        }
     }
 }
