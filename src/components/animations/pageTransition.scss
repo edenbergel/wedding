@@ -1,6 +1,63 @@
-svg {
+@import '../../styles/variables';
+
+.transition::before {
+    content: '';
     position: absolute;
-    left: 0;
-    z-index: 1;
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #f9f9fd, #f0f0fd, #e6e7fe, #dbdefe, #d0d6ff);
+        z-index: 10;
+
+    @media (max-width: 430px) and (orientation: portrait) {
+        animation: .8s melt-leave-mobile linear forwards;
+    }
+    animation: .8s melt-leave linear forwards; 
+}
+
+@keyframes melt-leave-mobile {
+    0% {
+        clip-path: path('M0 0H430V932C430 932 299.302 863.557 215 863.557C130.698 863.557 0 932 0 932V0Z');
+    }
+    90% {
+        clip-path: path('M0 0H430V108C430 108 383.908 38.7594 215 38.7594C46.0918 38.7594 0 108 0 108V0Z');
+    }
+    97% {
+        clip-path: path('M0 0H430V38.7594C430 38.7594 383.908 11.7594 215 11.7594C46.0918 11.7594 0 38.7594 0 38.7594V0Z');
+    }
+    100% {
+        clip-path: path('M0 0H430V12.5C430 12.5 383.908 0 215 0C46.0918 0 0 12.5 0 12.5V0Z');
+        visibility: hidden;
+    }
+}
+
+@keyframes melt-leave {
+    0% {
+        clip-path: path('M0 0H2351.02V1440C2351.02 1440 1631.74 1439.18 1170.82 1439.18C709.904 1439.18 0 1440 0 1440V0Z');
+    }
+    5% {
+        clip-path: path('M0.371094 0H1440.37V882C1440.37 882 999.813 881.5 717.5 881.5C435.187 881.5 0.371094 882 0.371094 882V0Z');
+    }
+    10% {
+        clip-path: path('M0.371094 -3H1440.37V821.5C1440.37 821.5 1077 687.5 717.5 687.5C358 687.5 0.371094 821.5 0.371094 821.5V-3Z');
+    }
+    30% {
+        clip-path: path('M0.371094 -3H1440.37V687.5C1440.37 687.5 1077 489.5 717.5 489.5C358 489.5 0.371094 687.5 0.371094 687.5V-3Z');
+    }
+    50% {
+        clip-path: path('M0.371094 -3H1440.37V489.5C1440.37 489.5 1077 194.5 717.5 194.5C358 194.5 0.371094 489.5 0.371094 489.5V-3Z');
+    }
+    80% {
+        clip-path: path('M0.371094 -3H1440.37V194.5C1440.37 194.5 1077 50.5 717.5 50.5C358 50.5 0.371094 194.5 0.371094 194.5V-3Z');
+    }
+    90% {
+        clip-path: path('M0.371094 -3H1440.37V50.5C1440.37 50.5 1077 4.5 717.5 4.5C358 4.5 0.371094 50.5 0.371094 50.5V-3Z');
+    }
+    100% {
+        clip-path: path('M0.371094 -3H1440.37V4.5C1440.37 4.5 1077 4.5 717.5 4.5C358 4.5 0.371094 4.5 0.371094 4.5V-3Z');
+        visibility: hidden;
+    }
 }

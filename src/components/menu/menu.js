@@ -30,17 +30,13 @@ const Menu = ({ showMenu, setShowMenu }) => {
                         navItems.map((item, i) => (
                             <li key={i} className={`menu_nav_item ${location.pathname === `/${item}` && 'is_active'}`}  onClick={() => hideMenu(item)}>
                                 <p>{item}</p>
-                                <Link 
-                                    fill={`${location.pathname === `/${item}` ? 'black' :  '#D4D3CF'}`} 
-                                    className={'menu_item_icon'}
-                                />
+                                <Link className={'menu_item_icon'} />
                             </li>
                         ))
                     }
                 </ul>
+                <Tampon className={'spin'} />
             </nav>
-
-            <Tampon className={'spin'} />
         </div>
     )
 }

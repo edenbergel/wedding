@@ -5,17 +5,24 @@
     overflow: hidden;    
     display: grid;
 
+    @media (max-width: #{$mediumTablet - 1px}) {
+        grid-template-rows: .5fr 1fr;
+    }
+
     @media (min-width: $mediumTablet) {
         height: $contentHeightMedium;
     }
 
     .event_title {
         align-self: end;
+
+        @media (max-width: #{$mediumTablet - 1px}) {
+            grid-area: 1 / 1 / 2 / 2;
+        }
     }
 
     .event_wrapper {
         text-align: center;
-        display: flex;
         flex-direction: column;
         justify-content: center;
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import eventsData from "../../events";
-import { FadeIn } from "../animations/fadeIn";
+import { PageTransition } from "../animations/pageTransition";
 import { Button } from "../button/button";
 import { Header } from "../header/header";
 import { ProgressBar } from "../progressBar/progressBar";
@@ -23,37 +23,39 @@ export const Events = () => {
     };
 
     return (
-        <FadeIn delay={400}>
-            <Header />
-            <section className="events">
-                <ProgressBar current={current} />
-                <Title
-                    title={
-                        <>
-                            {"JEREMIE"}{" "}
-                            <span className="break_line">
-                                <span>{"&"}{" "}</span>
-                                <span>{"HODAYA"}</span>
-                            </span>
-                        </>
-                    }
-                    className={"event_title"}
-                />
-                {eventsData.map((event, index) => (
-                    <Event
-                        key={event.name}
-                        event={event}
-                        index={index}
-                        next={next}
-                        current={current}
+        <>
+            <PageTransition>
+                <Header />
+                <section className="events">
+                    <ProgressBar current={current} />
+                    <Title
+                        title={
+                            <>
+                                {"JEREMIE"}{" "}
+                                <span className="break_line">
+                                    <span>{"&"}{" "}</span>
+                                    <span>{"HODAYA"}</span>
+                                </span>
+                            </>
+                        }
+                        className={"event_title"}
                     />
-                ))}
-                <Button
-                    className={"event_btn_desktop"}
-                    text={"Invitation"}
-                    onClick={() => navigate("/invitation")}
-                />
-            </section>
-        </FadeIn>
+                    {eventsData.map((event, index) => (
+                        <Event
+                            key={event.name}
+                            event={event}
+                            index={index}
+                            next={next}
+                            current={current}
+                        />
+                    ))}
+                    <Button
+                        className={"event_btn_desktop"}
+                        text={"Invitation"}
+                        onClick={() => navigate("/invitation")}
+                    />
+                </section>
+            </PageTransition>
+        </>
     );
 };

@@ -18,7 +18,7 @@ export const Header = () =>  {
             <FadeIn>
                 <header className="header">
                     <Link to='/events'><Logo className={'header_logo'}/></Link>
-                    <Button text={'menu'} noMargin onClick={() => setShowMenu('active')} className={'header_btn'} />
+                    <Button text={'menu'} isLowercase noMargin onClick={() => setShowMenu('active')} className={'header_btn'} />
                 </header>
             </FadeIn>
             <Menu showMenu={showMenu} setShowMenu={setShowMenu} />

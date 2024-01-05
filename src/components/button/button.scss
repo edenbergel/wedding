@@ -2,7 +2,7 @@
 
 .button {
     border-radius: 30px;
-    border: 0.5px solid #000;
+    border: 0.5px solid #313131;
     padding: 6px 16px;
     background-color: #F9F8F4;
     width: fit-content;
@@ -12,13 +12,17 @@
     .button_text {
         font-family: $gaelaFont;
         font-size: 16px;
-        text-transform: capitalize;
         z-index: 2;
         position: relative;
         letter-spacing: 1.5px;
+        color: #313131;
 
         @media (min-width: $mediumTablet) {
             font-size: 18px;
+        }
+
+        &:not(.isLowercase) {
+            text-transform: capitalize;
         }
     }
 
@@ -29,12 +33,14 @@
         left: 0;
         width: 0;
         height: 100%;
-        background: rgba(0, 0, 0, 0.856);
+        background: #313131;
         transition: all .5s;
     }
 
     &:hover {
-        color: #fff;
+        .button_text {
+            color: #F9F8F4;
+        }
 
         &::after {
             width: 100%;

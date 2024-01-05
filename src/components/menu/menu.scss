@@ -6,36 +6,142 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #F6F1EC;
+    background-image: linear-gradient(to bottom, #f1f2ff, #e8eaff, #e0e2ff, #d7dbff, #ced3ff);
     z-index: 10;
+    transition: filter .5s linear;
 
-    &.active { animation: 1s melt-enter ease-in-out forwards; }
-    &.inactive { 
-        animation: 1s melt-leave ease-in-out forwards;
+    &.active {
+        filter: blur(0px);
+
+        @media (max-width: 430px) and (orientation: portrait) {
+            animation: .8s melt-enter-mobile linear forwards;
+        }
+
+        animation: .8s melt-enter linear forwards; 
+    }
+    &.inactive {
+        filter: blur(3px);
+
+        @media (max-width: 430px) and (orientation: portrait) {
+            animation: .8s melt-leave-mobile linear forwards;
+        }
+        animation: .8s melt-leave linear forwards; 
     }
 
     &.hide {
         visibility: hidden;
     }
-    
-    @keyframes melt-enter {
-        from {
-            clip-path: path('M0.37207 0H1440.37V107.897C1440.37 107.897 1286.02 38.7224 720.372 38.7224C154.726 38.7224 0.37207 107.897 0.37207 107.897V0Z');
+
+    @keyframes melt-enter-mobile {
+        0% {
+            clip-path: path('M0 0H430V108C430 108 383.908 38.7594 215 38.7594C46.0918 38.7594 0 108 0 108V0Z');
         }
-        to {
-            clip-path: path('M0.371094 0H1440.37V882C1440.37 882 1002.68 817.229 720.371 817.229C438.058 817.229 0.371094 882 0.371094 882V0Z');
+        90% {
+            clip-path: path('M0 0H430V932C430 932 350.5 876.557 215 876.557C79.5 876.557 0 932 0 932V0Z');
+        }
+        97% {
+            clip-path: path('M0 0H430V932C430 932 299.302 919.557 215 919.557C130.698 919.557 0 932 0 932V0Z');
+        }
+        100% {
+            clip-path: path('M0 0H430V932C430 932 299.802 932 215.5 932C131.198 932 0 932 0 932V0Z');
+        }
+    }
+
+    @keyframes melt-leave-mobile {
+        0% {
+            clip-path: path('M0 0H430V932C430 932 299.302 863.557 215 863.557C130.698 863.557 0 932 0 932V0Z');
+        }
+        90% {
+            clip-path: path('M0 0H430V108C430 108 383.908 38.7594 215 38.7594C46.0918 38.7594 0 108 0 108V0Z');
+        }
+        97% {
+            clip-path: path('M0 0H430V38.7594C430 38.7594 383.908 11.7594 215 11.7594C46.0918 11.7594 0 38.7594 0 38.7594V0Z');
+        }
+        100% {
+            clip-path: path('M0 0H430V12.5C430 12.5 383.908 0 215 0C46.0918 0 0 12.5 0 12.5V0Z');
+            visibility: hidden;
         }
     }
     
-    @keyframes melt-leave {
+    @keyframes melt-enter {
         0% {
-            clip-path: path('M0.371094 0H1440.37V882C1440.37 882 1002.68 817.229 720.371 817.229C438.058 817.229 0.371094 882 0.371094 882V0Z');
+            clip-path: path('M0.371094 -3H1440.37V4.5C1440.37 4.5 1077 4.5 717.5 4.5C358 4.5 0.371094 4.5 0.371094 4.5V-3Z');
         }
-        98% {
-            clip-path: path('M0.37207 0H1440.37V107.897C1440.37 107.897 1286.02 38.7224 720.372 38.7224C154.726 38.7224 0.37207 107.897 0.37207 107.897V0Z');
+        5% {
+            clip-path: path('M0.371094 -3H1440.37V50.5C1440.37 50.5 1077 4.5 717.5 4.5C358 4.5 0.371094 50.5 0.371094 50.5V-3Z');
+        }
+        10% {
+            clip-path: path('M0.371094 -3H1440.37V194.5C1440.37 194.5 1077 50.5 717.5 50.5C358 50.5 0.371094 194.5 0.371094 194.5V-3Z');
+        }
+        30% {
+            clip-path: path('M0.371094 -3H1440.37V489.5C1440.37 489.5 1077 194.5 717.5 194.5C358 194.5 0.371094 489.5 0.371094 489.5V-3Z');
+        }
+        50% {
+            clip-path: path('M0.371094 -3H1440.37V687.5C1440.37 687.5 1077 489.5 717.5 489.5C358 489.5 0.371094 687.5 0.371094 687.5V-3Z');
+        }
+        80% {
+            clip-path: path('M0.371094 -3H1440.37V821.5C1440.37 821.5 1077 687.5 717.5 687.5C358 687.5 0.371094 821.5 0.371094 821.5V-3Z');
+        }
+        90% {
+            clip-path: path('M0.371094 0H1440.37V882C1440.37 882 999.813 881.5 717.5 881.5C435.187 881.5 0.371094 882 0.371094 882V0Z');
         }
         100% {
-            clip-path: path('M0.37207 0H720.372H1440.37C1440.37 0 1284.84 0.371906 719.198 0.371906C153.552 0.371906 0.37207 0 0.37207 0Z');
+            clip-path: path('M0 0H2351.02V1440C2351.02 1440 1631.74 1439.18 1170.82 1439.18C709.904 1439.18 0 1440 0 1440V0Z');
+        }
+    }
+
+    // @keyframes melt-enter {
+    //     0% {
+    //         clip-path: path('M0.371094 -3H1440.37V879C1440.37 879 1077 821.5 717.5 821.5C358 821.5 0.371094 879 0.371094 879V-3Z');
+    //     }
+    //     5% {
+    //         clip-path: path('M0.371094 0H1440.37V882C1440.37 882 999.813 881.5 717.5 881.5C435.187 881.5 0.371094 882 0.371094 882V0Z');
+    //     }
+    //     10% {
+    //         clip-path: path('M0.371094 -3H1440.37V821.5C1440.37 821.5 1077 687.5 717.5 687.5C358 687.5 0.371094 821.5 0.371094 821.5V-3Z');
+    //     }
+    //     30% {
+    //         clip-path: path('M0.371094 -3H1440.37V687.5C1440.37 687.5 1077 489.5 717.5 489.5C358 489.5 0.371094 687.5 0.371094 687.5V-3Z');
+    //     }
+    //     50% {
+    //         clip-path: path('M0.371094 -3H1440.37V489.5C1440.37 489.5 1077 194.5 717.5 194.5C358 194.5 0.371094 489.5 0.371094 489.5V-3Z');
+    //     }
+    //     80% {
+    //         clip-path: path('M0.371094 -3H1440.37V194.5C1440.37 194.5 1077 50.5 717.5 50.5C358 50.5 0.371094 194.5 0.371094 194.5V-3Z');
+    //     }
+    //     90% {
+    //         clip-path: path('M0.371094 -3H1440.37V50.5C1440.37 50.5 1077 4.5 717.5 4.5C358 4.5 0.371094 50.5 0.371094 50.5V-3Z');
+    //     }
+    //     100% {
+    //         clip-path: path('M0.371094 -3H1440.37V4.5C1440.37 4.5 1077 4.5 717.5 4.5C358 4.5 0.371094 4.5 0.371094 4.5V-3Z');
+    //         visibility: hidden;
+    //     }
+    // }
+    
+    @keyframes melt-leave {
+        0% {
+            clip-path: path('M0.371094 -3H1440.37V879C1440.37 879 1077 821.5 717.5 821.5C358 821.5 0.371094 879 0.371094 879V-3Z');
+        }
+        5% {
+            clip-path: path('M0.371094 0H1440.37V882C1440.37 882 999.813 881.5 717.5 881.5C435.187 881.5 0.371094 882 0.371094 882V0Z');
+        }
+        10% {
+            clip-path: path('M0.371094 -3H1440.37V821.5C1440.37 821.5 1077 687.5 717.5 687.5C358 687.5 0.371094 821.5 0.371094 821.5V-3Z');
+        }
+        30% {
+            clip-path: path('M0.371094 -3H1440.37V687.5C1440.37 687.5 1077 489.5 717.5 489.5C358 489.5 0.371094 687.5 0.371094 687.5V-3Z');
+        }
+        50% {
+            clip-path: path('M0.371094 -3H1440.37V489.5C1440.37 489.5 1077 194.5 717.5 194.5C358 194.5 0.371094 489.5 0.371094 489.5V-3Z');
+        }
+        80% {
+            clip-path: path('M0.371094 -3H1440.37V194.5C1440.37 194.5 1077 50.5 717.5 50.5C358 50.5 0.371094 194.5 0.371094 194.5V-3Z');
+        }
+        90% {
+            clip-path: path('M0.371094 -3H1440.37V50.5C1440.37 50.5 1077 4.5 717.5 4.5C358 4.5 0.371094 50.5 0.371094 50.5V-3Z');
+        }
+        100% {
+            clip-path: path('M0.371094 -3H1440.37V4.5C1440.37 4.5 1077 4.5 717.5 4.5C358 4.5 0.371094 4.5 0.371094 4.5V-3Z');
             visibility: hidden;
         }
     }
@@ -64,6 +170,9 @@
 
     .menu_nav {
         height: $contentHeight;
+        max-width: 90%;
+        margin: 0 auto;
+        position: relative;
 
         @media (min-width: $mediumTablet) {
             height: $contentHeightMedium;
@@ -75,8 +184,6 @@
             height: 100%;
             flex-direction: column;
             justify-content: center;
-            max-width: 90%;
-            margin: 0 auto;
         }
 
         .menu_nav_item {
@@ -85,12 +192,8 @@
             font-family: $italianaFont;
             display: flex;
             align-items: center;
-            color: #D4D3CF;
+            color: #313131;
             cursor: pointer;
-            
-            &.is_active {
-                color: #000;
-            }
 
             @media (max-width: #{$mediumTablet - 1px}) {
                 justify-content: space-between;
@@ -110,14 +213,13 @@
 
     .spin {
         position: absolute;
+        right: 0;
         bottom: 20px;
-        right: 28px;
         animation: spin 6s infinite linear;  
 
-        @media (min-width: $mediumTablet) {
-            width: 152px;
-            height: 152px;
-            right: 76px;
+        @media (max-width: #{$mediumTablet - 1px}) {
+            width: 80px;
+            height: 80px;
         }
     }
 

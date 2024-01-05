@@ -16,8 +16,8 @@
         font-family: $italianaFont;
         text-align: center;
         padding: 30px 12.5px;
-        border: 1px solid #000; 
-        outline: .5px solid #000;
+        border: 1px solid #313131; 
+        outline: .5px solid #313131;
         outline-offset: -10px;
         display: flex;
         flex-direction: column;
@@ -57,7 +57,7 @@
                 display: block;
                 width: .5px;
                 height: 18px;
-                background-color: #000;
+                background-color: #313131;
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
@@ -94,7 +94,7 @@
                 display: block;
                 width: 108px;
                 height: 0.5px;
-                background-color: #000;
+                background-color: #313131;
             }
 
             > span {
@@ -146,7 +146,7 @@
 
     .invitation_address {
         font-size: 16px;
-        border-bottom: .5px solid #000;
+        border-bottom: .5px solid #313131;
         margin: 0 8px;
         padding: 16px 0;
 

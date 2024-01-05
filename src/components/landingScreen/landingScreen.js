@@ -9,19 +9,20 @@ export const LandingScreen = () => {
     const navigate = useNavigate();
 
     return (
-        <FadeIn>
-            <div className="landing">
-                <Logo className={'logo'} />
-                <h1 className="landing_title">
-                    For our <br /> favourite people
-                </h1>
-                <Button
-                    text={"explore our love"}
-                    size={"medium"}
-                    onClick={() => navigate('/events')}
-                />
-            </div>
-        </FadeIn>
-        
+        <>
+            <FadeIn>
+                <div className="landing">
+                    <Logo className={'logo'} />
+                    <h1 className="landing_title">
+                        For our <br /> favourite people
+                    </h1>
+                    <Button
+                        text={"explore our love"}
+                        size={"medium"}
+                        onClick={() => navigate('/events')}
+                    />
+                </div>
+            </FadeIn>
+        </>
     );
 };

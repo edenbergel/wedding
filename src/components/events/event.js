@@ -6,7 +6,7 @@ import './events.scss';
 
 const Event = ({ event, index, next, current }) => {
     const navigate = useNavigate();
-    const isLast = index === 2;
+    const isLast = index === 2 && index === current;
 
     return (
         <Slide isVisible={index === current} className={`event_${index}`}>

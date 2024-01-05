@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import apiService from '../../services/apiService';
-import { FadeIn } from '../animations/fadeIn';
+import { PageTransition } from '../animations/pageTransition';
 import { Button } from '../button/button';
 import { Header } from '../header/header';
 import { Input } from '../input/input';
@@ -61,66 +61,68 @@ export const Form = () => {
     };
 
     return (
-        <FadeIn>
+        <>
             <Header />
-            <main className='form_container'>
-                <form onSubmit={handleSubmit}>
-                    <div className='form_title'>
-                        <Title title={'RSVP'} />
-                    </div>
+            <PageTransition>
+                <main className='form_container'>
+                    <form onSubmit={handleSubmit}>
+                        <div className='form_title'>
+                            <Title title={'RSVP'} />
+                        </div>
 
-                    <Input 
-                        placeholder={'First Name'} 
-                        value={firstName} 
-                        onChange={handleFirstNameChange} 
-                        style={{marginBottom: '50px'}}
-                        hasError={!!error}
-                    />
-                    <Input 
-                        placeholder={'Last Name'} 
-                        value={lastName} 
-                        onChange={handleLastNameChange} 
-                        style={{marginBottom: '50px'}}
-                        hasError={!!error}
-                    />
-
-                    <div className='form_wrapper_radio'>
-                        <span className='form_item_span form_item_radio'>Can we count on your presence ?</span>
-                        <label className='form_item_radio'>
-                            <input
-                                type="radio"
-                                value="yes"
-                                checked={isYesSelected}
-                                onChange={handleRadioChange}
-                            />
-                            Yes
-                        </label>
-                        <label className='form_item_radio'>
-                            <input
-                                type="radio"
-                                value="no"
-                                checked={!isYesSelected}
-                                onChange={handleRadioChange}
-                            />
-                            No
-                        </label>
-                    </div>
-
-                    <div className='form_wrapper_number'>
-                        <span className='form_item_span'>How much are you ?</span>
                         <Input 
-                            placeholder={'0'} 
-                            value={quantity} 
-                            onChange={handleQuantityChange} 
-                            type={'number'}
-                            style={{ marginBottom: '35px' }}
+                            placeholder={'First Name'} 
+                            value={firstName} 
+                            onChange={handleFirstNameChange} 
+                            style={{marginBottom: '50px'}}
                             hasError={!!error}
                         />
-                    </div>
-                    <Button type="submit" text={'send'} />
-                    {error && <Toast error={error} setError={setError} />}
-                </form>
-            </main>
-        </FadeIn>
+                        <Input 
+                            placeholder={'Last Name'} 
+                            value={lastName} 
+                            onChange={handleLastNameChange} 
+                            style={{marginBottom: '50px'}}
+                            hasError={!!error}
+                        />
+
+                        <div className='form_wrapper_radio'>
+                            <span className='form_item_span form_item_radio'>Can we count on your presence ?</span>
+                            <label className='form_item_radio'>
+                                <input
+                                    type="radio"
+                                    value="yes"
+                                    checked={isYesSelected}
+                                    onChange={handleRadioChange}
+                                />
+                                Yes
+                            </label>
+                            <label className='form_item_radio'>
+                                <input
+                                    type="radio"
+                                    value="no"
+                                    checked={!isYesSelected}
+                                    onChange={handleRadioChange}
+                                />
+                                No
+                            </label>
+                        </div>
+
+                        <div className='form_wrapper_number'>
+                            <span className='form_item_span'>How much are you ?</span>
+                            <Input 
+                                placeholder={'0'} 
+                                value={quantity} 
+                                onChange={handleQuantityChange} 
+                                type={'number'}
+                                style={{ marginBottom: '35px' }}
+                                hasError={!!error}
+                            />
+                        </div>
+                        <Button type="submit" text={'send'} />
+                        {error && <Toast error={error} setError={setError} />}
+                    </form>
+                </main>
+            </PageTransition>
+        </>
     )
 }
