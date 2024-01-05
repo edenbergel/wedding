@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Logo } from "../../svgs";
 import { FadeIn } from "../animations/fadeIn";
@@ -7,17 +7,21 @@ import Menu from "../menu/menu";
 import './header.scss';
 
 export const Header = () =>  {
-    const [showMenu, setShowMenu] = useState(false)
+    const [showMenu, setShowMenu] = useState(null)
+
+    useEffect(() => {
+        return () => setShowMenu(null);
+    }, [])
 
     return (
         <>
             <FadeIn>
                 <header className="header">
                     <Link to='/events'><Logo className={'header_logo'}/></Link>
-                    <Button text={'menu'} noMargin onClick={() => setShowMenu(!showMenu)} className={'header_btn'} />
+                    <Button text={'menu'} noMargin onClick={() => setShowMenu('active')} className={'header_btn'} />
                 </header>
             </FadeIn>
-            {showMenu && <Menu setShowMenu={setShowMenu} />}
+            <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
         </>
     )
 }

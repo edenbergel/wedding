@@ -6,17 +6,50 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #F9F8F4;
+    background-color: #F6F1EC;
     z-index: 10;
+
+    &.active { animation: 1s melt-enter ease-in-out forwards; }
+    &.inactive { 
+        animation: 1s melt-leave ease-in-out forwards;
+    }
+
+    &.hide {
+        visibility: hidden;
+    }
+    
+    @keyframes melt-enter {
+        from {
+            clip-path: path('M0.37207 0H1440.37V107.897C1440.37 107.897 1286.02 38.7224 720.372 38.7224C154.726 38.7224 0.37207 107.897 0.37207 107.897V0Z');
+        }
+        to {
+            clip-path: path('M0.371094 0H1440.37V882C1440.37 882 1002.68 817.229 720.371 817.229C438.058 817.229 0.371094 882 0.371094 882V0Z');
+        }
+    }
+    
+    @keyframes melt-leave {
+        0% {
+            clip-path: path('M0.371094 0H1440.37V882C1440.37 882 1002.68 817.229 720.371 817.229C438.058 817.229 0.371094 882 0.371094 882V0Z');
+        }
+        98% {
+            clip-path: path('M0.37207 0H1440.37V107.897C1440.37 107.897 1286.02 38.7224 720.372 38.7224C154.726 38.7224 0.37207 107.897 0.37207 107.897V0Z');
+        }
+        100% {
+            clip-path: path('M0.37207 0H720.372H1440.37C1440.37 0 1284.84 0.371906 719.198 0.371906C153.552 0.371906 0.37207 0 0.37207 0Z');
+            visibility: hidden;
+        }
+    }
 
     .menu_upper_content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 16.5px 25px 16.5px;
+        height: 60px;
+        max-width: 90%;
+        margin: 0 auto;
 
         @media (min-width: $mediumTablet) {
-            padding: 16.5px 76px 16.5px 100px;
+            height: 124px;
 
             .menu_logo {
                 width: 45px;
@@ -42,13 +75,14 @@
             height: 100%;
             flex-direction: column;
             justify-content: center;
+            max-width: 90%;
+            margin: 0 auto;
         }
 
         .menu_nav_item {
             text-transform: capitalize;
             font-size: 40px;
             font-family: $italianaFont;
-            margin: 0 53px 0 28px;
             display: flex;
             align-items: center;
             color: #D4D3CF;
@@ -64,7 +98,6 @@
 
             @media (min-width: $mediumTablet) {
                 font-size: 100px;
-                margin: 0 53px 0 100px;
                 gap: 40px;
 
                 .menu_item_icon {

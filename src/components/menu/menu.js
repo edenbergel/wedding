@@ -3,20 +3,20 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Logo, Back, Link, Tampon } from '../../svgs';
 import './menu.scss';
 
-const Menu = ({ setShowMenu }) => {
+const Menu = ({ showMenu, setShowMenu }) => {
     const navItems = ['events', 'invitation', 'rsvp'];
     const navigate = useNavigate();
     const location = useLocation();
 
     const hideMenu = (route) => {
-        setShowMenu(false);
+        setShowMenu('inactive');
 
         if (route) {
             navigate(`/${route}`);
         }
     }
     return (
-        <div className='menu'>
+        <div className={`menu ${showMenu === 'active' ? 'active' : showMenu === 'inactive' ? 'inactive' : 'hide'}`}>
             <div className='menu_upper_content'>
                 <Logo className={'menu_logo'} />
                 <div onClick={() => hideMenu()}>

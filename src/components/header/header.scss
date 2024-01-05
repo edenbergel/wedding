@@ -18,6 +18,10 @@
     @media (min-width: $mediumTablet) {
         height: 124px;
 
+        > a {
+            height: 64px;
+        }
+
         .header_logo {
             width: 45px;
             height: 64px;
