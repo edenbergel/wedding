@@ -31,15 +31,15 @@ export const Events = () => {
         <>
             <PageTransition>
                 <Header />
-                <section className="events">
+                <section className={`events ${locale === "he" && 'events-he'}`}>
                     <ProgressBar current={current} />
                     <Title
                         title={
                             <>
-                                {"JEREMIE"}{" "}
+                                {t('dudeName')}{" "}
                                 <span className="break_line">
-                                    <span>{"&"}{" "}</span>
-                                    <span>{"HODAYA"}</span>
+                                    <span>{t('and')}{" "}</span>
+                                    <span>{t('queenName')}</span>
                                 </span>
                             </>
                         }

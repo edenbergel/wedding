@@ -29,7 +29,10 @@ const resources = {
             "invitationNavItem": "הזמנה",
             "rsvpNavItem": "אישור הגעה",
             "hebrew": "עברית",
-            "french": "צרפתית"
+            "french": "צרפתית",
+            "dudeName": "ירמיהו",
+            "and": "",
+            "queenName": "והודיה"
         }
     },
     fr: {
@@ -59,7 +62,10 @@ const resources = {
             "invitationNavItem": "Invitation",
             "rsvpNavItem": "Rsvp",
             "hebrew": "IL",
-            "french": "FR"
+            "french": "FR",
+            "dudeName": "Jérémie",
+            "and": "&",
+            "queenName": "Hodaya"
         }
     }
 };
