@@ -27,7 +27,9 @@ const resources = {
             "headerButton": "תפריט",
             "eventsNavItem": "אירועים",
             "invitationNavItem": "הזמנה",
-            "rsvpNavItem": "אישור הגעה"
+            "rsvpNavItem": "אישור הגעה",
+            "hebrew": "עברית",
+            "french": "צרפתית"
         }
     },
     fr: {
@@ -55,7 +57,9 @@ const resources = {
             "headerButton": "menu",
             "eventsNavItem": "Évènements",
             "invitationNavItem": "Invitation",
-            "rsvpNavItem": "Rsvp"
+            "rsvpNavItem": "Rsvp",
+            "hebrew": "IL",
+            "french": "FR"
         }
     }
 };

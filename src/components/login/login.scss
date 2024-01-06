@@ -8,6 +8,15 @@
     align-items: center;
     height: 100vh;
 
+    &.login-he .language_picker {
+        right: 15px;
+        left: auto;
+
+        @media (min-width: $mediumTablet) {
+            right: 25px;
+        }
+    }
+
     .language_picker {
         position: absolute;
         top: 5px;

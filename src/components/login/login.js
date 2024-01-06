@@ -10,11 +10,12 @@ import './login.scss';
 import { LanguagePicker } from '../languagePicker/languagePicker';
 
 export const Login = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [enteredPassword, setEnteredPassword] = useState('');
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
+    const language = i18n.language;
 
     const checkPasswordValidity = async (e) => {
         e.preventDefault();
@@ -37,7 +38,7 @@ export const Login = () => {
     };
 
     return (
-        <div className='login'>
+        <div className={`login ${language === 'he-IL' && 'login-he'}`}>
             <LanguagePicker />
 
             <Title title={t('passwordTitle')} />

@@ -9,12 +9,13 @@ import { LanguagePicker } from "../languagePicker/languagePicker";
 
 export const LandingScreen = () => {
     const navigate = useNavigate();
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+    const language = i18n.language;
 
     return (
         <>
             <FadeIn>
-                <div className="landing">
+                <div className={`landing ${language === 'he-IL' && 'landing-he'}`}>
                     <LanguagePicker />
                     <Logo className={'logo'} />
                    
