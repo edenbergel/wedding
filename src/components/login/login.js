@@ -3,11 +3,13 @@ import apiService from '../../services/apiService';
 import { Button } from '../button/button';
 import { Input } from '../input/input';
 import { Title } from '../title/title';
-import './login.scss';
 import { useNavigate } from "react-router-dom";
 import { Toast } from '../toast/toast';
+import { useTranslation } from 'react-i18next';
+import './login.scss';
 
 export const Login = () => {
+    const { t } = useTranslation();
     const [enteredPassword, setEnteredPassword] = useState('');
     const [error, setError] = useState('');
 
@@ -26,7 +28,7 @@ export const Login = () => {
                 navigate('/landing');
             } else {
                 // Password is not found in the collection
-                setError('Password is not valid')
+                setError(t('passwordError'))
             }
         } catch (error) {
             console.error('Error checking password:', error);
@@ -35,11 +37,11 @@ export const Login = () => {
 
     return (
         <div className='login'>
-            <Title title={'Reserved space'} />
-            <h4 className='login_subtitle'>Please enter the password</h4>
+            <Title title={t('passwordTitle')} />
+            <h4 className='login_subtitle'>{t('passwordSubtitle')}</h4>
             <form className='login_form'>
                 <Input 
-                    placeholder={'Password'} 
+                    placeholder={t('passwordPlaceholder')} 
                     value={enteredPassword} 
                     onChange={(e) => setEnteredPassword(e.target.value)}
                     hasError={!!error}
@@ -47,7 +49,7 @@ export const Login = () => {
                     onKeyPress={e => e.key === 'Enter' ? checkPasswordValidity(e) : {}}
                 />
             </form>
-            <Button text={'enter'} onClick={checkPasswordValidity} />
+            <Button text={t('passwordEnter')} onClick={checkPasswordValidity} />
             {error && (
                 <Toast error={error} setError={setError}/>
             )}

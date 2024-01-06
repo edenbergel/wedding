@@ -4,7 +4,7 @@ import { Slide } from '../animations/slide';
 import { Button } from '../button/button';
 import './events.scss';
 
-const Event = ({ event, index, next, current }) => {
+const Event = ({ event, index, next, current, t }) => {
     const navigate = useNavigate();
     const isLast = index === 2 && index === current;
 
@@ -16,7 +16,7 @@ const Event = ({ event, index, next, current }) => {
                 <h2 className='event_name'>{event.name}</h2>
                 <Button
                     className={'event_btn'}
-                    text={isLast ? 'Invitation' : 'next'} 
+                    text={isLast ? t('invitationButton') : t('nextButton')} 
                     onClick={() => isLast ? navigate('/invitation') : next()}
                 />
             </div>

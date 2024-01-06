@@ -4,20 +4,25 @@ import { Logo } from "../../svgs";
 import { FadeIn } from "../animations/fadeIn";
 import { Button } from "../button/button";
 import "./landingScreen.scss";
+import { useTranslation } from 'react-i18next';
 
 export const LandingScreen = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation()
 
     return (
         <>
             <FadeIn>
                 <div className="landing">
                     <Logo className={'logo'} />
-                    <h1 className="landing_title">
-                        For our <br /> favourite people
-                    </h1>
+                   
+                    <h1 className="landing_title"
+                        dangerouslySetInnerHTML={{
+                            __html: t('landingTitle', { lineBreak: '<br />' }),
+                        }}
+                    />
                     <Button
-                        text={"explore our love"}
+                        text={t('landingButton')}
                         size={"medium"}
                         onClick={() => navigate('/events')}
                     />

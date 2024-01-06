@@ -7,6 +7,7 @@ import { Header } from '../header/header';
 import { Input } from '../input/input';
 import { Title } from '../title/title';
 import { Toast } from '../toast/toast';
+import { useTranslation } from 'react-i18next';
 import './form.scss';
 
 export const Form = () => {
@@ -16,6 +17,7 @@ export const Form = () => {
     const [quantity, setQuantity] = useState(0);
     const [error, setError] = useState('')
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const handleLastNameChange = (e) => {
         setLastName(e.target.value);
@@ -37,7 +39,7 @@ export const Form = () => {
         e.preventDefault();
 
         if (!firstName || !lastName || !quantity.toString().trim()) {
-            setError('Please fill in all required fields');
+            setError(t('error'));
             return;
         }
 
@@ -71,14 +73,14 @@ export const Form = () => {
                         </div>
 
                         <Input 
-                            placeholder={'First Name'} 
+                            placeholder={t('formFirstName')} 
                             value={firstName} 
                             onChange={handleFirstNameChange} 
                             style={{marginBottom: '50px'}}
                             hasError={!!error}
                         />
                         <Input 
-                            placeholder={'Last Name'} 
+                            placeholder={t('formLastName')} 
                             value={lastName} 
                             onChange={handleLastNameChange} 
                             style={{marginBottom: '50px'}}
@@ -86,29 +88,33 @@ export const Form = () => {
                         />
 
                         <div className='form_wrapper_radio'>
-                            <span className='form_item_span form_item_radio'>Can we count on your presence ?</span>
+                            <span className='form_item_span form_item_radio'>
+                                {t('formPresenceQuestion')}
+                            </span>
                             <label className='form_item_radio'>
                                 <input
                                     type="radio"
-                                    value="yes"
+                                    value={'yes'}
                                     checked={isYesSelected}
                                     onChange={handleRadioChange}
                                 />
-                                Yes
+                                {t('formPresenceYes')}
                             </label>
                             <label className='form_item_radio'>
                                 <input
                                     type="radio"
-                                    value="no"
+                                    value={'no'}
                                     checked={!isYesSelected}
                                     onChange={handleRadioChange}
                                 />
-                                No
+                                {t('formPresenceNo')}
                             </label>
                         </div>
 
                         <div className='form_wrapper_number'>
-                            <span className='form_item_span'>How much are you ?</span>
+                            <span className='form_item_span'>
+                                {t('formQtyQuestion')}
+                            </span>
                             <Input 
                                 placeholder={'0'} 
                                 value={quantity} 
@@ -118,7 +124,7 @@ export const Form = () => {
                                 hasError={!!error}
                             />
                         </div>
-                        <Button type="submit" text={'send'} />
+                        <Button type="submit" text={t('formSendButton')} />
                         {error && <Toast error={error} setError={setError} />}
                     </form>
                 </main>

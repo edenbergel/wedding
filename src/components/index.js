@@ -10,3 +10,4 @@ export { FadeIn } from './animations/fadeIn';
 export { Login } from './login/login';
 export { FormSuccess  } from './form/formSuccess';
 export { Invitation } from './invitation/invitation';
+export { LanguagePicker } from './languagePicker/languagePicker';

@@ -4,10 +4,12 @@ import { PageTransition } from "../animations/pageTransition";
 import { Button } from "../button/button";
 import { Header } from "../header/header";
 import { Title } from "../title/title";
+import { useTranslation } from 'react-i18next';
 import "./invitation.scss";
 
 export const Invitation = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     return (
         <>
@@ -15,7 +17,9 @@ export const Invitation = () => {
             <PageTransition>
                 <div className="invitation">
                     <div className="invitation_wrapper">
-                        <h4 className="invitation_title">YOU ARE INVITED TO CELEBRATE THE UNION OF</h4>
+                        <h4 className="invitation_title">
+                            {t('inviteTitle')} YOU ARE INVITED TO CELEBRATE THE UNION OF
+                        </h4>
                         <Title title={'Jéremie & Hodaya'} />
                         <div className='invitation_content'>
                             <p className="invitation_p">
