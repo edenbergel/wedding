@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Logo, Back, Link, Tampon } from "../../svgs";
+import { LanguagePicker } from "../languagePicker/languagePicker";
 import "./menu.scss";
 
 const Menu = ({ showMenu, setShowMenu, t, language }) => {
@@ -49,7 +50,10 @@ const Menu = ({ showMenu, setShowMenu, t, language }) => {
                         </li>
                     ))}
                 </ul>
-                <Tampon className={`spin ${language === 'he-IL' && 'spin-he'}`} />
+                <div className={`menu_bottom ${language === 'he-IL' && 'menu_bottom-he'}`}>
+                    <LanguagePicker />
+                    <Tampon className={"spin"} />
+                </div>
             </nav>
         </div>
     );

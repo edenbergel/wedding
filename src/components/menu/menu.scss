@@ -149,6 +149,8 @@
         max-width: 90%;
         margin: 0 auto;
         position: relative;
+        display: grid;
+        grid-template-rows: auto .3fr;
 
         @media (min-width: $mediumTablet) {
             height: $contentHeightMedium;
@@ -195,15 +197,28 @@
         }
     }
 
-    .spin {
+    .menu_bottom {
         position: absolute;
-        right: 0;
         bottom: 20px;
-        animation: spin 6s infinite linear;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
 
-        &.spin-he {
-            left: 0;
+        &.menu_bottom-he {
+            flex-direction: row-reverse;
         }
+
+        .language_picker span {
+    
+            @media (min-width: $mediumTablet) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .spin {
+        animation: spin 6s infinite linear;
 
         @media (max-width: #{$mediumTablet - 1px}) {
             width: 80px;

@@ -15,6 +15,17 @@
     align-items: center;
     font-family: $italianaFont;
 
+    .language_picker {
+        position: absolute;
+        top: 5px;
+        left: 15px;
+
+        @media (min-width: $mediumTablet) {
+            top: 15px;
+            left: 25px;
+        }
+    }
+
     @media (min-width: $mediumTablet) {
         br {
             display: none;

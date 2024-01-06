@@ -8,6 +8,17 @@
     align-items: center;
     height: 100vh;
 
+    .language_picker {
+        position: absolute;
+        top: 5px;
+        left: 15px;
+
+        @media (min-width: $mediumTablet) {
+            top: 15px;
+            left: 25px;
+        }
+    }
+
     .login_form {
         margin-bottom: 40px;
         width: 100%;

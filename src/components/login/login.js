@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Toast } from '../toast/toast';
 import { useTranslation } from 'react-i18next';
 import './login.scss';
+import { LanguagePicker } from '../languagePicker/languagePicker';
 
 export const Login = () => {
     const { t } = useTranslation();
@@ -37,6 +38,8 @@ export const Login = () => {
 
     return (
         <div className='login'>
+            <LanguagePicker />
+
             <Title title={t('passwordTitle')} />
             <h4 className='login_subtitle'>{t('passwordSubtitle')}</h4>
             <form className='login_form'>

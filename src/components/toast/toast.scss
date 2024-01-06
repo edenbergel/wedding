@@ -35,6 +35,10 @@
         }
     }
 
+    &.error-he {
+        flex-direction: row-reverse;
+    }
+
     &.isActive {
         opacity: 1;
     }

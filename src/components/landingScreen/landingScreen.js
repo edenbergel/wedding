@@ -5,6 +5,7 @@ import { FadeIn } from "../animations/fadeIn";
 import { Button } from "../button/button";
 import "./landingScreen.scss";
 import { useTranslation } from 'react-i18next';
+import { LanguagePicker } from "../languagePicker/languagePicker";
 
 export const LandingScreen = () => {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ export const LandingScreen = () => {
         <>
             <FadeIn>
                 <div className="landing">
+                    <LanguagePicker />
                     <Logo className={'logo'} />
                    
                     <h1 className="landing_title"
