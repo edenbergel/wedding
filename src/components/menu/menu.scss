@@ -172,6 +172,7 @@
             align-items: center;
             color: #313131;
             cursor: pointer;
+            z-index: 1;
 
             &.menu_nav_item-he {
                 flex-direction: row-reverse;

@@ -13,7 +13,7 @@ const Menu = ({ showMenu, setShowMenu, t, language }) => {
         setShowMenu("inactive");
 
         if (route) {
-        navigate(`/${route}`);
+            navigate(`/${route}`);
         }
     };
 
