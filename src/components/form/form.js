@@ -69,7 +69,7 @@ export const Form = () => {
                 <main className='form_container'>
                     <form onSubmit={handleSubmit}>
                         <div className='form_title'>
-                            <Title title={'RSVP'} />
+                            <Title title={t('rsvpNavItem')} />
                         </div>
 
                         <Input 

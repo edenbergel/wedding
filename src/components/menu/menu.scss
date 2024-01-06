@@ -89,34 +89,6 @@
             clip-path: path('M0 0H2351.02V1440C2351.02 1440 1631.74 1439.18 1170.82 1439.18C709.904 1439.18 0 1440 0 1440V0Z');
         }
     }
-
-    // @keyframes melt-enter {
-    //     0% {
-    //         clip-path: path('M0.371094 -3H1440.37V879C1440.37 879 1077 821.5 717.5 821.5C358 821.5 0.371094 879 0.371094 879V-3Z');
-    //     }
-    //     5% {
-    //         clip-path: path('M0.371094 0H1440.37V882C1440.37 882 999.813 881.5 717.5 881.5C435.187 881.5 0.371094 882 0.371094 882V0Z');
-    //     }
-    //     10% {
-    //         clip-path: path('M0.371094 -3H1440.37V821.5C1440.37 821.5 1077 687.5 717.5 687.5C358 687.5 0.371094 821.5 0.371094 821.5V-3Z');
-    //     }
-    //     30% {
-    //         clip-path: path('M0.371094 -3H1440.37V687.5C1440.37 687.5 1077 489.5 717.5 489.5C358 489.5 0.371094 687.5 0.371094 687.5V-3Z');
-    //     }
-    //     50% {
-    //         clip-path: path('M0.371094 -3H1440.37V489.5C1440.37 489.5 1077 194.5 717.5 194.5C358 194.5 0.371094 489.5 0.371094 489.5V-3Z');
-    //     }
-    //     80% {
-    //         clip-path: path('M0.371094 -3H1440.37V194.5C1440.37 194.5 1077 50.5 717.5 50.5C358 50.5 0.371094 194.5 0.371094 194.5V-3Z');
-    //     }
-    //     90% {
-    //         clip-path: path('M0.371094 -3H1440.37V50.5C1440.37 50.5 1077 4.5 717.5 4.5C358 4.5 0.371094 50.5 0.371094 50.5V-3Z');
-    //     }
-    //     100% {
-    //         clip-path: path('M0.371094 -3H1440.37V4.5C1440.37 4.5 1077 4.5 717.5 4.5C358 4.5 0.371094 4.5 0.371094 4.5V-3Z');
-    //         visibility: hidden;
-    //     }
-    // }
     
     @keyframes melt-leave {
         0% {
@@ -153,6 +125,10 @@
         height: 60px;
         max-width: 90%;
         margin: 0 auto;
+
+        &.menu_upper_content-he {
+            flex-direction: row-reverse;
+        }
 
         @media (min-width: $mediumTablet) {
             height: 124px;
@@ -195,6 +171,14 @@
             color: #313131;
             cursor: pointer;
 
+            &.menu_nav_item-he {
+                flex-direction: row-reverse;
+
+                > svg {
+                    transform: rotate(-90deg);
+                }
+            }
+
             @media (max-width: #{$mediumTablet - 1px}) {
                 justify-content: space-between;
             }
@@ -215,7 +199,11 @@
         position: absolute;
         right: 0;
         bottom: 20px;
-        animation: spin 6s infinite linear;  
+        animation: spin 6s infinite linear;
+
+        &.spin-he {
+            left: 0;
+        }
 
         @media (max-width: #{$mediumTablet - 1px}) {
             width: 80px;

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Logo, Back, Link, Tampon } from "../../svgs";
 import "./menu.scss";
 
-const Menu = ({ showMenu, setShowMenu, t }) => {
+const Menu = ({ showMenu, setShowMenu, t, language }) => {
     const navItems = ["events", "invitation", "rsvp"];
     const navigate = useNavigate();
     const location = useLocation();
@@ -27,7 +27,7 @@ const Menu = ({ showMenu, setShowMenu, t }) => {
                         : "hide"
                     }`}
         >
-            <div className="menu_upper_content">
+            <div className={`menu_upper_content ${language === 'he-IL' && 'menu_upper_content-he'}`}>
                 <Logo className={"menu_logo"} />
                 <div onClick={() => hideMenu()}>
                     <Back className={"menu_back"} />
@@ -41,7 +41,7 @@ const Menu = ({ showMenu, setShowMenu, t }) => {
                             key={i}
                             className={`menu_nav_item ${
                                 location.pathname === `/${item}` && "is_active"
-                            }`}
+                            } ${language === 'he-IL' && 'menu_nav_item-he'}`}
                             onClick={() => hideMenu(item)}
                         >
                             <p>{t(`${item}NavItem`)}</p>
@@ -49,7 +49,7 @@ const Menu = ({ showMenu, setShowMenu, t }) => {
                         </li>
                     ))}
                 </ul>
-                <Tampon className={"spin"} />
+                <Tampon className={`spin ${language === 'he-IL' && 'spin-he'}`} />
             </nav>
         </div>
     );

@@ -9,7 +9,8 @@ import './header.scss';
 
 export const Header = () =>  {
     const [showMenu, setShowMenu] = useState(null)
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const language = i18n.language;
 
     useEffect(() => {
         return () => setShowMenu(null);
@@ -18,12 +19,12 @@ export const Header = () =>  {
     return (
         <>
             <FadeIn>
-                <header className="header">
+                <header className={`header ${language === 'he-IL' && 'header-he'}`}>
                     <Link to='/events'><Logo className={'header_logo'}/></Link>
                     <Button text={t('headerButton')} isLowercase noMargin onClick={() => setShowMenu('active')} className={'header_btn'} />
                 </header>
             </FadeIn>
-            <Menu showMenu={showMenu} setShowMenu={setShowMenu} t={t} />
+            <Menu showMenu={showMenu} setShowMenu={setShowMenu} t={t} language={language} />
         </>
     )
 }

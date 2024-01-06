@@ -11,6 +11,10 @@
     max-width: 90%;
     margin: 0 auto;
 
+    &.header-he {
+        flex-direction: row-reverse;
+    }
+
     > p {
         letter-spacing: 1px;
     }
