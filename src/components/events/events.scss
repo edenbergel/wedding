@@ -1,13 +1,10 @@
 @import '../../styles/variables';
 
 .events {
-    height: $contentHeight;
-    overflow: hidden;    
+    height:fit-content;
     display: grid;
-
-    @media (max-width: #{$mediumTablet - 1px}) {
-        grid-template-rows: .5fr 1fr;
-    }
+    column-gap: 20px;
+    overflow: hidden;
 
     @media (min-width: $mediumTablet) {
         height: $contentHeightMedium;
@@ -24,20 +21,35 @@
 
     .event_wrapper {
         text-align: center;
-        flex-direction: column;
-        justify-content: center;
 
         .event_img {
-            padding: 0 80px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 50vh;
-            width: 100%;
-            margin-top: 16px;
+            display: flex;
+            margin: 16px auto 0;
+            
+
+            video {
+                border-radius: 310px;
+                margin: auto;
+            }
+
+            @media (max-width: #{$tablet - 1px}) {
+                video {
+                    width: calc(100vw - 170px);
+                }
+            }
+
+            @media (min-width: $tablet) and (max-width: #{$mediumTablet - 1px}) {
+                video {
+                    width: calc(100vw - 70%);
+                }
+            }
 
             @media (min-width: $mediumTablet) {
-                margin-top: 55px;
+                margin: 55px auto 0;
+
+                video {
+                    width: 16vw;
+                }
             }
         }
 

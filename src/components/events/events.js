@@ -9,21 +9,31 @@ import { Title } from "../title/title";
 import Event from "./event";
 import "./events.scss";
 import { useTranslation } from 'react-i18next';
+import { useSwiper } from "../swiper";
 
 export const Events = () => {
     const { t, i18n } = useTranslation();
 
     const [current, setCurrent] = useState(0);
     const navigate = useNavigate();
+    const { onTouchStart, onTouchMove, onTouchEnd } = useSwiper();
+
     const goTo = (index = 0) => {
         const total = 3;
         index = ((index % total) + total) % total;
         setCurrent(index);
     };
 
-    const next = () => {
-        goTo(current + 1);
-    };
+    const previous = e => {
+		e.stopPropagation();
+		goTo(current - 1);
+	};
+
+	const next = e => {
+		e.stopPropagation();
+		goTo(current + 1);
+	};
+    
     const language = i18n.language;
     const locale = language.slice(0, 2)
 
@@ -31,7 +41,12 @@ export const Events = () => {
         <>
             <PageTransition>
                 <Header />
-                <section className={`events ${locale === "he" && 'events-he'}`}>
+                <section 
+                    className={`events ${locale === "he" && 'events-he'}`} 
+                    onTouchEnd={e => onTouchEnd(next, previous, e)}
+                    onTouchMove={onTouchMove}
+                    onTouchStart={onTouchStart}
+                >
                     <ProgressBar current={current} />
                     <Title
                         title={

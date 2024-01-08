@@ -29,6 +29,7 @@ export const Login = () => {
                 setError('')
                 navigate('/landing');
             } else {
+                console.log('ici je rpasse')
                 // Password is not found in the collection
                 setError(t('passwordError'))
             }

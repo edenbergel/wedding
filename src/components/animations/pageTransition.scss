@@ -9,8 +9,8 @@
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(to bottom, #f9f9fd, #f0f0fd, #e6e7fe, #dbdefe, #d0d6ff);
-        z-index: 10;
+    background-color: #F0E7D9;
+    z-index: 10;
 
     @media (max-width: 430px) and (orientation: portrait) {
         animation: .8s melt-leave-mobile linear forwards;

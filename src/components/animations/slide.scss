@@ -3,7 +3,6 @@
 .slide-transition {
     @media (max-width: #{$mediumTablet - 1px}) {
         opacity: 0;
-        height: 0;
         transition: opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1);
         grid-area: 2 / 1 / 3 / 2;
     }
@@ -11,5 +10,4 @@
 
 .slide-transition.transitioning {
     opacity: 1;
-    height: 100%;
 }

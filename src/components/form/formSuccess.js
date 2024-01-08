@@ -14,6 +14,7 @@ export const FormSuccess = () => {
             <PageTransition>
                 <div className='form_success'>
                     <Title title={t('formSuccessTitle')} size={40} />
+                    <p className='form_success_subtitle'>{t('formSuccessSubTitle')}</p>
                     <p>{t('formSuccessNote')}</p>
                 </div>
             </PageTransition>

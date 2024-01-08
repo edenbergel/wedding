@@ -4,7 +4,7 @@
     border-radius: 30px;
     border: 0.5px solid #313131;
     padding: 6px 16px;
-    background-color: #F9F8F4;
+    background-color: #f8f1e7;
     width: fit-content;
     position: relative;
     overflow: hidden;
@@ -39,7 +39,7 @@
 
     &:hover {
         .button_text {
-            color: #F9F8F4;
+            color: #f8f1e7;
         }
 
         &::after {

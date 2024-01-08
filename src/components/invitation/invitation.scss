@@ -1,42 +1,116 @@
 @import '../../styles/variables';
 
 .invitation {
-    height: $contentHeight;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
-    margin: 0 auto;
+    position: relative;
+    margin: 50px auto 0;
+
+    @media (max-width: 320px) {
+        height: calc(100vh + 50px);
+    }
 
     @media (min-width: $mediumTablet) {
         height: $contentHeightMedium;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+        margin: auto;
     }
 
     .invitation_wrapper {
         font-family: $italianaFont;
         text-align: center;
-        padding: 30px 12.5px;
-        border: 1px solid #313131; 
-        outline: .5px solid #313131;
-        outline-offset: -10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: calc(100vw - 10%);
 
         @media (max-width: #{$mediumTablet - 1px}) {
-            margin: 20px auto;
+            width: 100%;
+            padding: 0 16px;
+        }
+    }
+
+    .invitation_fam {
+        width: 100%;
+        display: grid;
+        row-gap: 8px;
+        justify-content: space-between;
+
+        p {
+            justify-self: start;
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: 600;
+
+            @media (max-width: 360px) {
+                font-size: 12px;
+            }
+        }
+
+        &.invitation_fam-he {
+            row-gap: 0;
+            p:first-child, p:nth-child(2), p:nth-child(4) {
+                display: none;
+            }
+        }
+
+        p:nth-child(2) {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        p:nth-child(3) {
+            grid-area: 3 / 1 / 4 / 2;
+        }
+
+        p:nth-child(4) {
+            grid-area: 2 / 2 / 3 / 3;
+            justify-self: end;
+        }
+
+        p:last-child {
+            grid-area: 3 / 2 / 4 / 3;
+            justify-self: end;
+        }
+    }
+
+    .invitation_intro {
+        margin: 40px 0;
+        line-height: 25px;
+        font-size: 14px;
+        font-weight: 600;
+
+        @media (max-width: 360px) {
+            font-size: 12px;
         }
 
         @media (min-width: $mediumTablet) {
-            padding: 53px 12.5px;
+            br {
+                display: none;
+            }
         }
-    } 
+    }
 
     .invitation_title {
         font-size: 12px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        display: grid;
+        align-items: center;
+        gap: 10px;
+
+        &::before, &::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 0.5px;
+            background-color: #313131;
+        }
+
+        &::before {
+            grid-area: 1 / 1 / 2 / 2;
+            justify-self: end;
+        }
+
+        &::after {
+            grid-area: 1 / 3 / 2 / 4;
+        }
+
         @media (min-width: $mediumTablet) {
             font-size: 16px;
             font-weight: 300;
@@ -51,64 +125,29 @@
         grid-template-rows: repeat(2, 1fr);
         position: relative;
 
-        @media (max-width: #{$mediumTablet - 1px}) {
-            &::before, &::after {
-                content: '';
-                display: block;
-                width: .5px;
-                height: 18px;
-                background-color: #313131;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        &::before, &::after {
+            content: '';
+            display: block;
+            width: .5px;
+            height: 18px;
+            background-color: #313131;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-            &::before {
-                top: 0;
-                margin-top: 16px;
-            }
+        &::before {
+            top: 0;
+            margin-top: 16px;
         }
 
         &::after {
             bottom: 0;
             margin-bottom: 16px;
         }
-
         
-
         p:last-child {
             grid-area: 2 / 1 / 3 / 2;
-        }
-    }
-
-    .invitation_p {
-        grid-area: 1 / 1 / 2 / 2;
-
-        @media (min-width: $mediumTablet) {
-            display: grid;
-            align-items: center;
-            gap: 26px;
-
-            &::before, &::after {
-                content: '';
-                display: block;
-                width: 108px;
-                height: 0.5px;
-                background-color: #313131;
-            }
-
-            > span {
-                grid-area: 1 / 2 / 2 / 3; 
-            }
-    
-            &::before {
-                grid-area: 1 / 1 / 2 / 2;
-                justify-self: end;
-            }
-    
-            &::after {
-                grid-area: 1 / 3 / 2 / 4;
-            }
         }
     }
 
@@ -148,11 +187,10 @@
         font-size: 16px;
         border-bottom: .5px solid #313131;
         margin: 0 8px;
-        padding: 16px 0;
-
+        padding-bottom: 16px;
+        
         @media (min-width: $mediumTablet) {
-            width: 60%;
-            padding: 20px 0 60px;
+            width: 100%;
         }
     }
 
@@ -161,5 +199,55 @@
         font-size: 12px;
         font-weight: 300;
         padding: 20px 0;
+    }
+
+    .invitation_flower {
+        position: absolute;
+        z-index: -1;
+
+        &.invitation_flower_1 {
+            top: 0;
+            left: 0;
+        }
+
+        &.invitation_flower_2 {
+            top: 20%;
+            right: 0;
+        }
+
+        &.invitation_flower_3 {
+            bottom: 20%;
+            left: 0;
+        }
+
+        &.invitation_flower_4 {
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .invitation_flower_big {
+        position: absolute;
+        z-index: -1;
+
+        &.invitation_flower_big_1 {
+            top: 0;
+            left: 10%;
+        }
+
+        &.invitation_flower_big_2 {
+            top: 0;
+            right: 10%;
+        }
+
+        &.invitation_flower_big_3 {
+            bottom: 0;
+            left: 10%;
+        }
+
+        &.invitation_flower_big_4 {
+            bottom: 0;
+            right: 10%;
+        }
     }
 }

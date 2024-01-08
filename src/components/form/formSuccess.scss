@@ -4,9 +4,19 @@
     height: $contentHeight;
     display: grid;
     text-align: center;
+    grid-template-rows: 1fr 1fr;
 
     @media (min-width: $mediumTablet) {
         height: $contentHeightMedium;
+        grid-template-rows: auto;
+    }
+
+    .form_success_subtitle {
+        margin-top: 30px;
+        font-family: $helveticaFont;
+        letter-spacing: 1.04px;
+        font-size: 14px;
+
     }
 
     > *:first-child, > *:last-child  {
@@ -14,6 +24,13 @@
     }
 
     > *:last-child {
-        padding-bottom: 24px;
+        font-family: $helveticaFont;
+        padding-bottom: 35%;
+        letter-spacing: 1.04px;
+        font-size: 14px;
+
+        @media (min-width: $mediumTablet) {
+            padding-bottom: 24px;
+        }
     }
 }

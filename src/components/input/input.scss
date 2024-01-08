@@ -3,11 +3,13 @@
 .form_input {
     font-size: 16px;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-family: $italianaFont;
-    border-bottom: .5px solid #313131;
     margin: 0 40px;
     padding-bottom: 6px;
+    border: none;
+    border-bottom: .5px solid #313131;
+    border-radius: 0;
 
     &.hasError {
         border-bottom: .5px solid #ff0000;
