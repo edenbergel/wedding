@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #F0E7D9;
+    background-image: linear-gradient(to bottom, #f1f2ff, #e8eaff, #e0e2ff, #d7dbff, #ced3ff);
     z-index: 10;
     transition: filter .5s linear;
 
@@ -173,12 +173,25 @@
             color: #313131;
             cursor: pointer;
             z-index: 1;
+            
+            
+            p {
+                position: relative;
 
-            &:hover {
-                color: #D1C1AA;
-                
-                path {
-                    fill: #D1C1AA;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: -2%;
+                    left: 0;
+                    height: 2px;
+                    width: 0;
+                    background-color: #313131;
+                    transition: width .8s ease-in-out;
+                }
+
+                &:hover::after {
+                    width: 100%;
                 }
             }
 
@@ -208,7 +221,7 @@
 
     .menu_bottom {
         position: absolute;
-        bottom: 23%;
+        bottom: 5%;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;

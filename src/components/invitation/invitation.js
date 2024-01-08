@@ -26,13 +26,15 @@ export const Invitation = () => {
                         <h4 className="invitation_title">
                             {t('inviteTitle')}
                         </h4>
-                        <div className={`invitation_fam ${locale === "he" && 'invitation_fam-he'}`}>
-                            <p>Mme Hanna Mechaly</p>
-                            <p>Mme Rachel Bergel</p>
-                            <p>Eva & Leon Bergel</p>
-                            <p>Mme Yerika Ephraim</p>
-                            <p>Dafna & Charet Yeoshua</p>
-                        </div>
+                        {locale !== "he" &&
+                            <div className={`invitation_fam`}>
+                                <p>Mme Rachel Bergel</p>
+                                <p>Mme Hanna Mechaly</p>
+                                <p>Eva & Leon Bergel</p>
+                                <p>Mme Yerika Ephraim</p>
+                                <p>Dafna & Charet Yeoshua</p>
+                            </div>
+                        }
                         <p 
                             className="invitation_intro" 
                             dangerouslySetInnerHTML={{
@@ -59,6 +61,16 @@ export const Invitation = () => {
                             </p>
                         </div>
                         <h6 className='invitation_address'>{t('inviteAddress')}</h6>
+                        { locale === "he" &&
+                            <div className={`invitation_fam ${locale === "he" && 'invitation_fam-he'}`}>
+                                <p>Mme Rachel Bergel</p>
+                                <p>Mme Hanna Mechaly</p>
+                                <p>Eva & Leon Bergel</p>
+                                <p>Mme Yerika Ephraim</p>
+                                <p>Dafna & Charet Yeoshua</p>
+                            </div>
+                        }
+                        
                         <p className='invitation_note'>{t('inviteConfirm')}</p>
                         <Button text={t('rsvpButton')} onClick={() => navigate('/rsvp')} />
                     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import eventsData from "../../events";
 import { PageTransition } from "../animations/pageTransition";
@@ -10,6 +10,7 @@ import Event from "./event";
 import "./events.scss";
 import { useTranslation } from 'react-i18next';
 import { useSwiper } from "../swiper";
+import { useMediaQuery } from 'react-responsive';
 
 export const Events = () => {
     const { t, i18n } = useTranslation();
@@ -17,6 +18,8 @@ export const Events = () => {
     const [current, setCurrent] = useState(0);
     const navigate = useNavigate();
     const { onTouchStart, onTouchMove, onTouchEnd } = useSwiper();
+    const [height, setHeight] = useState('auto');
+    const isMobile = useMediaQuery({ maxWidth: 1023 });
 
     const goTo = (index = 0) => {
         const total = 3;
@@ -37,6 +40,15 @@ export const Events = () => {
     const language = i18n.language;
     const locale = language.slice(0, 2)
 
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+        
+        if (isMobile) {
+            setHeight(window.innerHeight - 60 + 'px');  
+        }
+    }, [isMobile])
+
     return (
         <>
             <PageTransition>
@@ -46,6 +58,7 @@ export const Events = () => {
                     onTouchEnd={e => onTouchEnd(next, previous, e)}
                     onTouchMove={onTouchMove}
                     onTouchStart={onTouchStart}
+                    style={isMobile ? { height } : null}
                 >
                     <ProgressBar current={current} />
                     <Title
@@ -68,6 +81,7 @@ export const Events = () => {
                             next={next}
                             current={current}
                             t={t}
+                            locale={locale}
                         />
                     ))}
                     <Button

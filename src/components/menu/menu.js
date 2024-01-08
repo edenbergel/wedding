@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Logo, Back, Link, Tampon } from "../../svgs";
 import { LanguagePicker } from "../languagePicker/languagePicker";
+import { useMediaQuery } from 'react-responsive';
 import "./menu.scss";
 
 const Menu = ({ showMenu, setShowMenu, t, language }) => {
     const navItems = ["events", "invitation", "rsvp"];
     const navigate = useNavigate();
     const location = useLocation();
-
+    const [height, setHeight] = useState('auto');
+    const isMobile = useMediaQuery({ maxWidth: 1023 });
+    
     const hideMenu = (route) => {
         setShowMenu("inactive");
 
@@ -16,6 +19,14 @@ const Menu = ({ showMenu, setShowMenu, t, language }) => {
             navigate(`/${route}`);
         }
     };
+
+    useEffect(() => {
+        if (isMobile) {
+            setHeight(window.innerHeight - 60 + 'px');
+        } else {
+            setHeight(window.innerHeight - 124 + 'px');
+        }
+    }, [isMobile])
 
     return (
         <div
@@ -35,7 +46,7 @@ const Menu = ({ showMenu, setShowMenu, t, language }) => {
                 </div>
             </div>
 
-            <nav className="menu_nav">
+            <nav className="menu_nav" style={showMenu && { height }}>
                 <ul className="menu_nav_content">
                     {navItems.map((item, i) => (
                         <li

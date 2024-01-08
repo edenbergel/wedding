@@ -4,10 +4,11 @@ import { Slide } from '../animations/slide';
 import { Button } from '../button/button';
 import './events.scss';
 
-const Event = ({ event, index, next, current, t }) => {
+const Event = ({ event, index, next, current, t, locale }) => {
     const navigate = useNavigate();
     const isLast = index === 2 && index === current;
     const videoRef = useRef(null);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     useEffect(() => {
         if (videoRef.current) {
@@ -17,9 +18,6 @@ const Event = ({ event, index, next, current, t }) => {
             videoRef.current.muted = true;
         }
     }, [videoRef]);
-
-    
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     useEffect(() => {
         // Check when the video is loaded
@@ -36,7 +34,10 @@ const Event = ({ event, index, next, current, t }) => {
     }, []);
 
     return (
-        <Slide isVisible={index === current} className={`event_${index}`}>
+        <Slide 
+            isVisible={index === current} 
+            className={`event_${index} ${locale === 'he' && 'event_he'}`} 
+        >
             <div className={'event_wrapper'}>
                 <div className='event_img'>
                     <video

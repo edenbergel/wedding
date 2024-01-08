@@ -20,17 +20,17 @@ const eventsData = {
         {
             "src": "https://edenbergel.github.io/wedding/src/images/houppa.mp4",
             "date": "9 באפריל 17:00",
-            "name": "חוּפָּה"
+            "name": "קַבָּלַת פָּנִים"
         },
         {
             "src": "https://edenbergel.github.io/wedding/src/images/party.mp4",
-            "date": "9 באפריל 19:00",
-            "name": "הערב"
+            "date": "9 באפריל 17:30",
+            "name": "חֻפָּה וְקִדּוּשִׁין"
         },
         {
             "src": "https://edenbergel.github.io/wedding/src/images/henne.mp4",
-            "date": "9 באפריל 23:00",
-            "name": "חֵנָה"
+            "date": "9 באפריל 23:30",
+            "name": "חִינָה"
         }
     ]
 }
