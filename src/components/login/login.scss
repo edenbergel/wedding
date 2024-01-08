@@ -30,10 +30,17 @@
     }
 
     .login_form {
-        margin-bottom: 40px;
+        padding-bottom: 40px;
         width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
 
         .login_input {
+            width: 70%;
             @media (min-width: $mediumTablet) {
                 width: 30%;
             }

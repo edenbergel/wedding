@@ -17,18 +17,21 @@ export const LandingScreen = () => {
             <FadeIn>
                 <div className={`landing ${language === 'he-IL' && 'landing-he'}`}>
                     <LanguagePicker />
-                    <Logo className={'logo'} />
-                   
-                    <h1 className="landing_title"
-                        dangerouslySetInnerHTML={{
-                            __html: t('landingTitle', { lineBreak: '<br />' }),
-                        }}
-                    />
-                    <Button
-                        text={t('landingButton')}
-                        size={"medium"}
-                        onClick={() => navigate('/events')}
-                    />
+
+                    <div className="landing_children">
+                        <Logo className={'logo'} />
+                    
+                        <h1 className="landing_title"
+                            dangerouslySetInnerHTML={{
+                                __html: t('landingTitle', { lineBreak: '<br />' }),
+                            }}
+                        />
+                        <Button
+                            text={t('landingButton')}
+                            size={"medium"}
+                            onClick={() => navigate('/events')}
+                        />
+                    </div>
                 </div>
             </FadeIn>
         </>

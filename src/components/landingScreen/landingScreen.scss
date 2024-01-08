@@ -2,8 +2,6 @@
 
 .landing {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: .5fr 1fr .5fr;
     height: 100%;
     justify-items: center;
     left: 0;
@@ -14,6 +12,21 @@
     width: 100%;
     align-items: center;
     font-family: $italianaFont;
+
+    .landing_children {
+        display: grid;
+        justify-content: space-between;
+        height: $contentHeight;
+
+        > button {
+            height: fit-content;
+        }
+
+        > * {
+            align-self: center;
+            justify-self: center;
+        }
+    }
 
     &.landing-he .language_picker {
         right: 15px;

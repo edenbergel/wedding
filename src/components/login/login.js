@@ -53,11 +53,12 @@ export const Login = () => {
                     className={'login_input'}
                     onKeyPress={e => e.key === 'Enter' ? checkPasswordValidity(e) : {}}
                 />
+                <Button text={t('passwordEnter')} onClick={checkPasswordValidity} />
+
+                {error && (
+                    <Toast error={error} setError={setError}/>
+                )}
             </form>
-            <Button text={t('passwordEnter')} onClick={checkPasswordValidity} />
-            {error && (
-                <Toast error={error} setError={setError}/>
-            )}
         </div>
     );
 };
