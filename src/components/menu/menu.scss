@@ -201,6 +201,11 @@
                 > svg {
                     transform: rotate(-90deg);
                 }
+
+                p::after {
+                    right: 0;
+                    left: auto
+                }
             }
 
             @media (max-width: #{$mediumTablet - 1px}) {
