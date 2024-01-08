@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Slide } from '../animations/slide';
 import { Button } from '../button/button';
@@ -19,6 +19,22 @@ const Event = ({ event, index, next, current, t }) => {
     }, [videoRef]);
 
     
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+    useEffect(() => {
+        // Check when the video is loaded
+        const videoElement = videoRef?.current;
+
+        videoElement.addEventListener('loadeddata', () => {
+            setIsVideoLoaded(true);
+        });
+
+        // Clean up event listener on component unmount
+        return () => {
+            videoElement.removeEventListener('loadeddata', () => {});
+        };
+    }, []);
+
     return (
         <Slide isVisible={index === current} className={`event_${index}`}>
             <div className={'event_wrapper'}>
@@ -30,6 +46,7 @@ const Event = ({ event, index, next, current, t }) => {
                         loop
                         playsInline
                         muted
+                        className={`${!isVideoLoaded ? 'isNotVideoLoaded': ''}`}
                     >
                         <source src={event.src} type="video/mp4" />
                         Your browser does not support the video tag.

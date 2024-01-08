@@ -25,11 +25,15 @@
         .event_img {
             display: flex;
             margin: 16px auto 0;
-            
 
             video {
                 border-radius: 310px;
                 margin: auto;
+
+                &.isNotVideoLoaded {
+                    background-image: linear-gradient(to bottom, #f1f2ff, #e8eaff, #e0e2ff, #d7dbff, #ced3ff);
+                    height: 50vh;
+                }
             }
 
             @media (max-width: #{$tablet - 1px}) {
