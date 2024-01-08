@@ -4,7 +4,6 @@ export { Events } from "./events/events";
 export { Button } from "./button/button";
 export { LandingScreen } from "./landingScreen/landingScreen";
 export { PageTransition } from "./animations/pageTransition";
-export { Home } from "./home/home";
 export { Form } from "./form/form";
 export { FadeIn } from './animations/fadeIn';
 export { Login } from './login/login';
