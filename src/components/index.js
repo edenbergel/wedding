@@ -10,3 +10,4 @@ export { Login } from './login/login';
 export { FormSuccess  } from './form/formSuccess';
 export { Invitation } from './invitation/invitation';
 export { LanguagePicker } from './languagePicker/languagePicker';
+export { Guests } from './guests/guests';

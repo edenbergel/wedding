@@ -24,7 +24,7 @@ export const Login = () => {
         e.preventDefault();
         
         try {
-            const response = await apiService.get();
+            const response = await apiService.passwordGet();
             const passwords = response.data.data.attributes.password;
 
             if (passwords === enteredPassword.replace(/\s/g, '')) {

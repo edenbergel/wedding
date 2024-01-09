@@ -1,0 +1,79 @@
+@import '../../styles/variables';
+
+.guests {
+    max-width: 90%;
+    margin: auto;
+
+    .outer {
+        overflow-x: scroll;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 10px;
+    }
+
+    .guests_table {
+        border-collapse: collapse;
+        font-family: $interFont;
+        min-width: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+        width: 100%;
+
+        thead tr {
+            color: #fff;
+            background: #313131;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 16px 0px 16px 30px;
+            min-width: 100px;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f2f2f2;            
+            background: #fff;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #ececff;
+            }
+        }
+
+        .guests_total {
+            font-weight: 600;
+        }
+    }
+
+    .guests_search {
+        margin: 50px auto;
+
+        > div {
+            width: fit-content;
+            border-radius: 10px;
+            outline: .9px solid #313131;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &::after {
+                content: "\1F9D0";
+                display: inline-block;
+                font-size: 25px;
+            }
+        }
+
+        input {
+            font-family: $interFont;
+            letter-spacing: normal;
+            text-align: left;
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+    }
+}
