@@ -24,10 +24,15 @@ export const Login = () => {
         e.preventDefault();
         
         try {
-            const response = await apiService.passwordGet();
-            const passwords = response.data.data.attributes.password;
+            const responseFR = await apiService.passwordGetFR();
+            const responseHE = await apiService.passwordGetHE();
+            const passwordFR = responseFR.data.data.attributes.password;
+            const passwordHE = responseHE.data.data.attributes.password;
 
-            if (passwords === enteredPassword.replace(/\s/g, '')) {
+            if (
+                (passwordFR === enteredPassword.replace(/\s/g, '')) || 
+                (passwordHE === enteredPassword.replace(/\s/g, ''))
+            ) {
                 // Password is valid
                 setError('')
                 navigate('/landing');
