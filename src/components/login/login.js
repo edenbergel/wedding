@@ -56,8 +56,8 @@ export const Login = () => {
             <form className='login_form'>
                 <Input 
                     placeholder={t('passwordPlaceholder')} 
-                    value={enteredPassword.toLowerCase()} 
-                    onChange={(e) => setEnteredPassword(e.target.value)}
+                    value={enteredPassword} 
+                    onChange={(e) => setEnteredPassword(e.target.value.toLowerCase())}
                     hasError={!!error}
                     className={'login_input'}
                     onKeyPress={e => e.key === 'Enter' ? checkPasswordValidity(e) : {}}
