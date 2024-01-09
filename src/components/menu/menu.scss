@@ -163,13 +163,14 @@
 
         .menu_nav_content {
             display: flex;
-            gap: 14%;
+            gap: 60px;
             height: 100%;
             flex-direction: column;
             justify-content: center;
 
             @media (min-width: $mediumTablet) {
                 justify-content: flex-end;
+                gap: 14%;
             }
         }
 
@@ -178,7 +179,7 @@
             font-size: 40px;
             font-family: $italianaFont;
             display: flex;
-            align-items: center;
+            align-items: baseline;
             color: #313131;
             cursor: pointer;
             z-index: 1;
@@ -218,7 +219,7 @@
             }
 
             @media (max-width: #{$mediumTablet - 1px}) {
-                justify-content: space-between;
+                gap: 20px;
             }
 
             @media (min-width: $mediumTablet) {
