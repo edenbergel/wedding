@@ -27,12 +27,11 @@ export const Login = () => {
             const response = await apiService.get();
             const passwords = response.data.data.attributes.password;
 
-            if (passwords === enteredPassword) {
+            if (passwords === enteredPassword.toLowerCase()) {
                 // Password is valid
                 setError('')
                 navigate('/landing');
             } else {
-                console.log('ici je rpasse')
                 // Password is not found in the collection
                 setError(t('passwordError'))
             }
