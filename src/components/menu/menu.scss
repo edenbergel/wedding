@@ -130,14 +130,19 @@
             flex-direction: row-reverse;
         }
 
-        @media (min-width: $mediumTablet) {
-            height: 124px;
-
-            .menu_logo {
+        .menu_logo {
+            width: 28px;
+            height: 39px;
+    
+            @media (min-width: $mediumTablet) {
                 width: 45px;
                 height: 64px;
             }
-            
+        }
+
+        @media (min-width: $mediumTablet) {
+            height: 124px;
+
             .menu_back {
                 cursor: pointer;
             }
@@ -231,10 +236,6 @@
         justify-content: space-between;
         align-items: flex-end;
         width: 100%;
-
-        @media (min-width: $mediumTablet) {
-            bottom: 20px;
-        }
 
         &.menu_bottom-he {
             flex-direction: row-reverse;

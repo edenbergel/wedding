@@ -24,14 +24,14 @@ export const Invitation = () => {
                 <div className="invitation">
                     <div className="invitation_wrapper">
                         <h4 className="invitation_title">
-                            {t('inviteTitle')}
+                            <span>{t('inviteTitle')}</span>
                         </h4>
                         {locale !== "he" &&
                             <div className={`invitation_fam`}>
                                 <p>Mme Rachel Bergel</p>
                                 <p>Mme Hanna Mechaly</p>
                                 <p>Eva & Leon Bergel</p>
-                                <p>Mme Yerika Ephraim</p>
+                                <p>Mme Yekira Ephraim</p>
                                 <p>Dafna & Charet Yeoshua</p>
                             </div>
                         }
@@ -66,7 +66,7 @@ export const Invitation = () => {
                                 <p>Mme Rachel Bergel</p>
                                 <p>Mme Hanna Mechaly</p>
                                 <p>Eva & Leon Bergel</p>
-                                <p>Mme Yerika Ephraim</p>
+                                <p>Mme Yekira Ephraim</p>
                                 <p>Dafna & Charet Yeoshua</p>
                             </div>
                         }
