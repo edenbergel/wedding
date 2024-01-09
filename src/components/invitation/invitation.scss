@@ -8,11 +8,8 @@
         height: calc(100vh + 50px);
     }
 
-    @media (min-width: $tablet) and (orientation: portrait) {
-        height: $contentHeightMedium;
-    }
-
     @media (min-width: $tablet) {
+        height: $contentHeightMedium;
         display: flex;
         justify-content: center;
         position: relative;
@@ -198,6 +195,7 @@
         @media (min-width: $mediumTablet) {
             width: 100%;
             padding-bottom: 40px;
+            font-size: 20px;
         }
     }
 

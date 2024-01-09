@@ -163,10 +163,10 @@
 
         .menu_nav_content {
             display: flex;
-            gap: 60px;
+            gap: 14%;
             height: 100%;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
         }
 
         .menu_nav_item {
@@ -219,7 +219,7 @@
 
             @media (min-width: $mediumTablet) {
                 font-size: 100px;
-                gap: 40px;
+                gap: 60px;
 
                 .menu_item_icon {
                     width: 70px;
