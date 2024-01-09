@@ -19,17 +19,17 @@ const eventsData = {
     'he': [
         {
             "src": "https://edenbergel.github.io/wedding/src/images/houppa.mp4",
-            "date": "9 באפריל 17:00",
+            "date": "17:00",
             "name": "קַבָּלַת פָּנִים"
         },
         {
             "src": "https://edenbergel.github.io/wedding/src/images/party.mp4",
-            "date": "9 באפריל 17:30",
+            "date": "17:30",
             "name": "חֻפָּה וְקִדּוּשִׁין"
         },
         {
             "src": "https://edenbergel.github.io/wedding/src/images/henne.mp4",
-            "date": "9 באפריל 23:30",
+            "date": "23:30",
             "name": "חִינָה"
         }
     ]

@@ -56,7 +56,7 @@ const resources = {
             "passwordPlaceholder": "Mot de passe",
             "passwordEnter": "entrer",
             "passwordError": "Mot de passe invalide",
-            "landingTitle": "Pour nos {{lineBreak}} chers invités",
+            "landingTitle": "Chère famille, chers amis",
             "landingButton": "Découvrir",
             "invitationButton": "Invitation",
             "nextButton": "suivant",
