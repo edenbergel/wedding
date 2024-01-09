@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import apiService from '../../services/apiService';
 import { Button } from '../button/button';
 import { Input } from '../input/input';
@@ -8,6 +8,7 @@ import { Toast } from '../toast/toast';
 import { useTranslation } from 'react-i18next';
 import './login.scss';
 import { LanguagePicker } from '../languagePicker/languagePicker';
+import { useMediaQuery } from 'react-responsive';
 
 export const Login = () => {
     const { t, i18n } = useTranslation();
@@ -16,6 +17,8 @@ export const Login = () => {
 
     const navigate = useNavigate();
     const language = i18n.language;
+    const [height, setHeight] = useState('100vh');
+    const isMobile = useMediaQuery({ maxWidth: 1023 });
 
     const checkPasswordValidity = async (e) => {
         e.preventDefault();
@@ -38,10 +41,17 @@ export const Login = () => {
         }
     };
 
-    return (
-        <div className={`login ${language === 'he-IL' && 'login-he'}`}>
-            <LanguagePicker />
+    useEffect(() => {
+        if (isMobile) {
+            setHeight(window.innerHeight - 60 + 'px');  
+        }
+    }, [isMobile])
 
+    return (
+        <div 
+            className={`login ${language === 'he-IL' && 'login-he'}`}  
+            style={{ height }}
+        >
             <Title title={t('passwordTitle')} />
             <h4 className='login_subtitle'>{t('passwordSubtitle')}</h4>
             <form className='login_form'>
@@ -59,6 +69,7 @@ export const Login = () => {
                     <Toast error={error} setError={setError}/>
                 )}
             </form>
+            <LanguagePicker />
         </div>
     );
 };

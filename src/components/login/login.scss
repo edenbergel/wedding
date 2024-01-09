@@ -9,23 +9,16 @@
     height: 100vh;
     position: relative;
 
-    &.login-he .language_picker {
-        right: 15px;
-        left: auto;
-
-        @media (min-width: $mediumTablet) {
-            right: 25px;
-        }
-    }
-
     .language_picker {
         position: absolute;
-        top: 5px;
-        left: 15px;
+        bottom: 0;
+        display: flex;
+        justify-content:center;
+        align-items: flex-end;
+        width: 100%;
 
         @media (min-width: $mediumTablet) {
-            top: 15px;
-            left: 25px;
+            bottom: 20px;
         }
     }
 

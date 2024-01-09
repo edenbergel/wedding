@@ -11,6 +11,7 @@ import "./events.scss";
 import { useTranslation } from 'react-i18next';
 import { useSwiper } from "../swiper";
 import { useMediaQuery } from 'react-responsive';
+import { LanguagePicker } from "../languagePicker/languagePicker";
 
 export const Events = () => {
     const { t, i18n } = useTranslation();
@@ -18,7 +19,7 @@ export const Events = () => {
     const [current, setCurrent] = useState(0);
     const navigate = useNavigate();
     const { onTouchStart, onTouchMove, onTouchEnd } = useSwiper();
-    const [height, setHeight] = useState('auto');
+    const [height, setHeight] = useState('100%');
     const isMobile = useMediaQuery({ maxWidth: 1023 });
 
     const goTo = (index = 0) => {
@@ -46,6 +47,11 @@ export const Events = () => {
         
         if (isMobile) {
             setHeight(window.innerHeight - 60 + 'px');  
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
         }
     }, [isMobile])
 
@@ -90,6 +96,7 @@ export const Events = () => {
                         onClick={() => navigate("/invitation")}
                     />
                 </section>
+                <LanguagePicker />
             </PageTransition>
         </>
     );
