@@ -2,7 +2,6 @@
 
 .landing {
     display: grid;
-    height: 100%;
     justify-items: center;
     left: 0;
     overflow: auto hidden;
@@ -16,7 +15,7 @@
     .landing_children {
         display: grid;
         justify-content: space-between;
-        height: $contentHeight;
+        height: 100%;
 
         > button {
             height: fit-content;
@@ -28,26 +27,17 @@
         }
     }
 
-    &.landing-he .language_picker {
-        right: 15px;
-        left: auto;
-
-        @media (min-width: $mediumTablet) {
-            right: 25px;
-        }
-    }
-
     .language_picker {
         position: absolute;
-        top: 5px;
-        left: 15px;
+        bottom: 0;
+        display: flex;
+        justify-content:center;
+        align-items: flex-end;
+        width: 100%;
 
         @media (min-width: $mediumTablet) {
-            top: 15px;
-            left: 25px;
+            bottom: 20px;
         }
-
-        
     }
 
     @media (min-width: $mediumTablet) {

@@ -83,6 +83,12 @@
 
     .break_line {
         display: block;
+
+        @media (min-width: $mediumTablet) {
+            span:first-child {
+                margin: 10px 0;
+            }
+        }
     }
 
     @media (min-width: $mediumTablet) {
