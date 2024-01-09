@@ -27,7 +27,7 @@ export const Login = () => {
             const response = await apiService.get();
             const passwords = response.data.data.attributes.password;
 
-            if (passwords === enteredPassword.toLowerCase()) {
+            if (passwords === enteredPassword.replace(/\s/g, '')) {
                 // Password is valid
                 setError('')
                 navigate('/landing');
@@ -56,7 +56,7 @@ export const Login = () => {
             <form className='login_form'>
                 <Input 
                     placeholder={t('passwordPlaceholder')} 
-                    value={enteredPassword} 
+                    value={enteredPassword.toLowerCase()} 
                     onChange={(e) => setEnteredPassword(e.target.value)}
                     hasError={!!error}
                     className={'login_input'}
