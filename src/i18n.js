@@ -44,7 +44,7 @@ const resources = {
             "time": "17",
             "hour": ":",
             "minute": "00",
-            "inviteAddress": "אולם ״הגבעה״ , קיבוץ גבעת ברנר",
+            "inviteAddress": "אולם ״הגבעה״ , קיבוץ גבעת ברנר,רחובות .",
             "inviteConfirm": "נא לאשר את הגעתך",
             "rsvpButton": "אישור הגעה"
         }
@@ -91,7 +91,7 @@ const resources = {
             "time": "17",
             "hour": "h",
             "minute": "00",
-            "inviteAddress": "HaGiva, Kibboutz Givat Brenner, Israël",
+            "inviteAddress": "HaGiva, Kibboutz Givat Brenner, Rehovot, Israël",
             "inviteConfirm": "Merci de confirmer votre présence",
             "rsvpButton": "RSVP"
         }
