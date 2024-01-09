@@ -41,8 +41,16 @@ export const Login = () => {
     };
 
     useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
         if (isMobile) {
             setHeight(window.innerHeight + 'px');  
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
         }
     }, [isMobile])
 

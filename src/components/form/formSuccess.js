@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PageTransition } from '../animations/pageTransition';
 import { Header } from '../header/header'
 import { Title } from '../title/title'
@@ -7,6 +7,16 @@ import './formSuccess.scss';
 
 export const FormSuccess = () => {
     const { t } = useTranslation();
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+        }
+    }, [])
 
     return (
         <>

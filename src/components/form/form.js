@@ -14,7 +14,7 @@ export const Form = () => {
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
     const [isYesSelected, setIsYesSelected] = useState(true); // default to 'Yes'
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(null);
     const [error, setError] = useState('')
     const navigate = useNavigate();
     const { t } = useTranslation();
