@@ -6,6 +6,10 @@ import { useTranslation } from 'react-i18next';
 const App = () => {
     const { t, i18n } = useTranslation();
     useEffect(() => {
+        if (i18n.language !== 'fr-FR' || i18n !== 'he-IL') {
+            localStorage.setItem('language', 'fr-FR');
+        }
+        
         const storedLanguage = localStorage.getItem('language');
         if (storedLanguage) {
             i18n.changeLanguage(storedLanguage);
