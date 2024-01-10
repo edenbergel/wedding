@@ -39,7 +39,8 @@ export const Events = () => {
 	};
     
     const language = i18n.language;
-    const locale = language.slice(0, 2)
+    const locale = language.slice(0, 2);
+    const validLocale = (locale === 'he' || locale === 'fr') ? locale : 'fr'
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -79,7 +80,7 @@ export const Events = () => {
                         }
                         className={"event_title"}
                     />
-                    {eventsData[locale].map((event, index) => (
+                    {eventsData[validLocale].map((event, index) => (
                         <Event
                             key={event.name}
                             event={event}

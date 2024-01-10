@@ -7,7 +7,6 @@ export const LanguagePicker = () => {
 
     const changeLanguage = (newLanguage) => {
         i18n.changeLanguage(newLanguage);
-        localStorage.setItem('language', newLanguage);
     };
 
     return (

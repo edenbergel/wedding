@@ -13,7 +13,7 @@ export const Button = ({
 }) => {
     const { i18n } = useTranslation();
     const language = i18n.language;
-    const locale = language.slice(0, 2)
+    const locale = language.slice(0, 2);
 
     return (
         <button
