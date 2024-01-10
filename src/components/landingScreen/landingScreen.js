@@ -41,7 +41,7 @@ export const LandingScreen = () => {
                     
                         <h1 className="landing_title"
                             dangerouslySetInnerHTML={{
-                                __html: t('landingTitle', { lineBreak: '<br />' }),
+                                __html: t('landingTitle', { lineBreak: '<br />' })
                             }}
                         />
                         <Button

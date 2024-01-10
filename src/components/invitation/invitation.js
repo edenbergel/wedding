@@ -38,7 +38,7 @@ export const Invitation = () => {
                         <p 
                             className="invitation_intro" 
                             dangerouslySetInnerHTML={{
-                                __html: t('inviteIntro', { lineBreak: '<br />' }),
+                                __html: t('inviteIntro', { lineBreak: '<br />' })
                             }}
                         />
                         <Title title={t('dudeName') + ' ' + t('and') + ' ' + t('queenName')} />
