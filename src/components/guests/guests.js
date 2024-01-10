@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react'
 import apiService from '../../services/apiService';
 import { Header } from '../header/header';
 import { Input } from '../input/input';
+import { useTranslation } from 'react-i18next';
 import './guests.scss';
 
 export const Guests = () => {
     const [guests, setGuests] = useState([]);
     const [totalGuest, setTotalGuests] = useState(0);
     const [filterText, setFilterText] = useState('');
+    const { i18n } = useTranslation();
+    const language = i18n.language;
+    const locale = language.slice(0, 2);
+    const validLocale = (locale === 'he' || locale === 'fr') ? locale : 'fr'
 
     const getAllGuests = async () => {        
         try {
@@ -33,6 +38,14 @@ export const Guests = () => {
             firstName.toLowerCase().includes(filterText.toLowerCase()) ||
             presenceText.toLowerCase().includes(filterText.toLowerCase())
         );
+    }).sort((a, b) => {
+        const sortedGuests = a.attributes.firstName.localeCompare(
+            b.attributes.firstName,
+            validLocale,
+            { sensitivity: "base" }
+        );
+
+        return sortedGuests;
     });
 
     const computeTotalGuests = filteredGuests?.reduce((acc, guest) => {
