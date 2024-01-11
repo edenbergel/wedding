@@ -11,8 +11,8 @@ export const LanguagePicker = () => {
 
     return (
         <div className="language_picker">
-            <div onClick={() => changeLanguage('he-IL')}><span>{t('hebrew')}</span></div>
-            <div onClick={() => changeLanguage('fr-FR')}><span>{t('french')}</span></div>
+            <div onClick={() => changeLanguage('he')}><span>{t('hebrew')}</span></div>
+            <div onClick={() => changeLanguage('fr')}><span>{t('french')}</span></div>
         </div>
     )
 }

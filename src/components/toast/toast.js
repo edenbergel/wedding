@@ -7,6 +7,7 @@ export const Toast = ({ error, setError }) => {
     const { i18n } = useTranslation()
 
     const language = i18n.language;
+    const locale = language.slice(0, 2);
 
     useEffect(() => {
         setShowToast(error);
@@ -20,7 +21,7 @@ export const Toast = ({ error, setError }) => {
     }, [error, setError])
 
     return (
-        <div className={`error ${showToast && 'isActive'} ${language === 'he-IL' && 'error-he'}`}>
+        <div className={`error ${showToast && 'isActive'} ${locale === 'he' && 'error-he'}`}>
             <p className="error_msg">{error}</p>
             <div className='error_cross' onClick={() => setShowToast(false)}/>
         </div>

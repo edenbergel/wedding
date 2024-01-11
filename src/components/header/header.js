@@ -11,6 +11,7 @@ export const Header = () =>  {
     const [showMenu, setShowMenu] = useState(null)
     const { t, i18n } = useTranslation();
     const language = i18n.language;
+    const locale = language.slice(0, 2);
 
     useEffect(() => {
         return () => setShowMenu(null);
@@ -19,12 +20,12 @@ export const Header = () =>  {
     return (
         <>
             <FadeIn>
-                <header className={`header ${language === 'he-IL' && 'header-he'}`}>
+                <header className={`header ${locale === 'he' && 'header-he'}`}>
                     <Link to='/events'><Logo className={'header_logo'}/></Link>
                     <Button text={t('headerButton')} isLowercase noMargin onClick={() => setShowMenu('active')} className={'header_btn'} />
                 </header>
             </FadeIn>
-            <Menu showMenu={showMenu} setShowMenu={setShowMenu} t={t} language={language} />
+            <Menu showMenu={showMenu} setShowMenu={setShowMenu} t={t} locale={locale} />
         </>
     )
 }

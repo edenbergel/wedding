@@ -5,7 +5,7 @@ import { LanguagePicker } from "../languagePicker/languagePicker";
 import { useMediaQuery } from 'react-responsive';
 import "./menu.scss";
 
-const Menu = ({ showMenu, setShowMenu, t, language }) => {
+const Menu = ({ showMenu, setShowMenu, t, locale }) => {
     const navItems = ["events", "invitation", "rsvp"];
     const navigate = useNavigate();
     const location = useLocation();
@@ -39,7 +39,7 @@ const Menu = ({ showMenu, setShowMenu, t, language }) => {
                         : "hide"
                     }`}
         >
-            <div className={`menu_upper_content ${language === 'he-IL' && 'menu_upper_content-he'}`}>
+            <div className={`menu_upper_content ${locale === 'he' && 'menu_upper_content-he'}`}>
                 <Logo className={"menu_logo"} />
                 <div onClick={() => hideMenu()}>
                     <Back className={"menu_back"} />
@@ -53,7 +53,7 @@ const Menu = ({ showMenu, setShowMenu, t, language }) => {
                             key={i}
                             className={`menu_nav_item ${
                                 location.pathname === `/${item}` && "is_active"
-                            } ${language === 'he-IL' && 'menu_nav_item-he'}`}
+                            } ${locale === 'he' && 'menu_nav_item-he'}`}
                             onClick={() => hideMenu(item)}
                         >
                             <p>{t(`${item}NavItem`)}</p>
@@ -61,7 +61,7 @@ const Menu = ({ showMenu, setShowMenu, t, language }) => {
                         </li>
                     ))}
                 </ul>
-                <div className={`menu_bottom ${language === 'he-IL' && 'menu_bottom-he'}`}>
+                <div className={`menu_bottom ${locale === 'he' && 'menu_bottom-he'}`}>
                     <LanguagePicker />
                     <Tampon className={"spin"} />
                 </div>

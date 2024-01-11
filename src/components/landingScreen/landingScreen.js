@@ -10,8 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 
 export const LandingScreen = () => {
     const navigate = useNavigate();
-    const { t, i18n } = useTranslation()
-    const language = i18n.language;
+    const { t } = useTranslation();
     const [height, setHeight] = useState('100vh');
     const isMobile = useMediaQuery({ maxWidth: 1023 });
 
@@ -33,7 +32,7 @@ export const LandingScreen = () => {
         <>
             <FadeIn>
                 <div 
-                    className={`landing ${language === 'he-IL' && 'landing-he'}`}
+                    className={'landing'}
                     style={{ height }}
                 >
                     <div className="landing_children">
