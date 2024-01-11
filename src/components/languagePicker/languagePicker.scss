@@ -43,4 +43,9 @@
             transition: all .5s;
         }
     }
+
+    &.language_picker-he div::after {
+        right: 0;
+        left: auto;
+    }
 }
