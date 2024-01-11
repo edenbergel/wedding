@@ -1,3 +1,3 @@
-const API_BASE_URL = 'https://jeremiehodaya-back-29b89160f77c.herokuapp.com';
+const API_BASE_URL = process.env.REACT_APP_BACKEND_API;
 
 export { API_BASE_URL };
