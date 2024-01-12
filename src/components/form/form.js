@@ -13,7 +13,7 @@ import './form.scss';
 export const Form = () => {
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
-    const [isYesSelected, setIsYesSelected] = useState(true); // default to 'Yes'
+    const [isYesSelected, setIsYesSelected] = useState(false); // default to 'Yes'
     const [quantity, setQuantity] = useState(null);
     const [error, setError] = useState('')
     const navigate = useNavigate();
@@ -34,14 +34,15 @@ export const Form = () => {
     const handleQuantityChange = (e) => {
         setQuantity(e.target.value);
     };
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!firstName || !lastName || !quantity.toString().trim()) {
+        if (!firstName || !lastName || (isYesSelected && !(quantity)?.toString().trim())) {
             setError(t('error'));
             return;
         }
+        if (isYesSelected && Number(quantity) <= 0) return setError(t('rsvpErrorQty'));
 
         apiService.post({
             firstName,
@@ -111,19 +112,24 @@ export const Form = () => {
                             </label>
                         </div>
 
-                        <div className='form_wrapper_number'>
-                            <span className='form_item_span'>
-                                {t('formQtyQuestion')}
-                            </span>
-                            <Input 
-                                placeholder={'0'} 
-                                value={quantity} 
-                                onChange={handleQuantityChange} 
-                                type={'number'}
-                                style={{ marginBottom: '35px' }}
-                                hasError={!!error}
-                            />
-                        </div>
+                        {
+                            isYesSelected && (
+                                <div className='form_wrapper_number'>
+                                    <span className='form_item_span'>
+                                        {t('formQtyQuestion')}
+                                    </span>
+                                    <Input 
+                                        placeholder={'0'} 
+                                        value={quantity || ''} 
+                                        onChange={handleQuantityChange} 
+                                        type={'number'}
+                                        style={{ marginBottom: '35px' }}
+                                        hasError={!!error}
+                                    />
+                                </div>
+                            )
+                        }
+                        
                         <Button type="submit" text={t('formSendButton')} />
                         {error && <Toast error={error} setError={setError} />}
                     </form>

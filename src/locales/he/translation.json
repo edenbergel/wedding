@@ -41,5 +41,6 @@
     "minute": "00",
     "inviteAddress": "אולם ״הגבעה״ , קיבוץ גבעת ברנר,רחובות .",
     "inviteConfirm": "נא לאשר את הגעתך",
-    "rsvpButton": "אישור הגעה"
+    "rsvpButton": "אישור הגעה",
+    "rsvpErrorQty": "אנא הזינו את מספר הנוכחים"
 }

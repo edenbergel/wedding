@@ -15,7 +15,7 @@ export const Toast = ({ error, setError }) => {
         const toast = setTimeout(() => {
             setShowToast(false);
             setError('');
-        }, 3000)
+        }, 6000)
 
         return () => clearTimeout(toast);
     }, [error, setError])
@@ -23,7 +23,10 @@ export const Toast = ({ error, setError }) => {
     return (
         <div className={`error ${showToast && 'isActive'} ${locale === 'he' && 'error-he'}`}>
             <p className="error_msg">{error}</p>
-            <div className='error_cross' onClick={() => setShowToast(false)}/>
+            <div className='error_cross' onClick={() => {
+                setShowToast(false);
+                setError('');
+            }} />
         </div>
     );
 };

@@ -41,5 +41,6 @@
     "minute": "00",
     "inviteAddress": "HaGiva, Kibboutz Givat Brenner, Rehovot, Israël",
     "inviteConfirm": "Merci de confirmer votre présence",
-    "rsvpButton": "RSVP"
+    "rsvpButton": "RSVP",
+    "rsvpErrorQty": "Veuillez entrer le nombre de personnes présentes"
 }
