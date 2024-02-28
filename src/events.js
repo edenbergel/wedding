@@ -2,7 +2,7 @@ const eventsData = {
     'fr': [
         {
             "src": `${process.env.REACT_APP_GITHUB_IMAGES}/houppa.mp4`,
-            "date": "9 avril - 17h00",
+            "date": "9 avril - 18h00",
             "name": "La houppa"
         },
         {
@@ -19,12 +19,12 @@ const eventsData = {
     'he': [
         {
             "src": `${process.env.REACT_APP_GITHUB_IMAGES}/houppa.mp4`,
-            "date": "17:00",
+            "date": "18:00",
             "name": "קַבָּלַת פָּנִים"
         },
         {
             "src": `${process.env.REACT_APP_GITHUB_IMAGES}/party.mp4`,
-            "date": "17:30",
+            "date": "18:30",
             "name": "חֻפָּה וְקִדּוּשִׁין"
         },
         {
