@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import apiService from '../../services/apiService';
 import { Header } from '../header/header';
 import { Input } from '../input/input';
@@ -13,18 +13,26 @@ export const Guests = () => {
     const language = i18n.language;
     const locale = language.slice(0, 2);
     const validLocale = (locale === 'he' || locale === 'fr') ? locale : 'fr'
-
-    const getAllGuests = async () => {        
-        try {
-            const response = await apiService.guestsGet();
-            
-            if (!!response) {
-                setGuests(response.data.data)
+    
+    const getAllGuests = useCallback(async () => {
+        let allItems = [];
+        let start = 0;
+        const limit = 100;
+    
+        while (true) {
+            const data = await apiService.guestsGet(start, limit);
+            const items = data.data;
+    
+            allItems = [...allItems, ...items];
+    
+            if (items.length < limit) {
+                break;
             }
-        } catch (error) {
-            console.error('Error checking password:', error);
+    
+            start += limit;
         }
-    };
+        setGuests(allItems);
+    }, []);
 
     const filteredGuests = guests?.filter(guest => {
         const { firstName, lastName, presence } = guest.attributes;
@@ -61,7 +69,7 @@ export const Guests = () => {
     useEffect(() => {
         getAllGuests();
         setTotalGuests(computeTotalGuests);
-    }, [computeTotalGuests])
+    }, [getAllGuests, computeTotalGuests])
 
     return (
         <>
